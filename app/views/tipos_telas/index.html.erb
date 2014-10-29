@@ -1,0 +1,25 @@
+<h1>Listing tipos_telas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipos_telas.each do |tipos_tela| %>
+      <tr>
+        <td><%= tipos_tela.nombre %></td>
+        <td><%= link_to 'Show', tipos_tela %></td>
+        <td><%= link_to 'Edit', edit_tipos_tela_path(tipos_tela) %></td>
+        <td><%= link_to 'Destroy', tipos_tela, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tipos tela', new_tipos_tela_path %>

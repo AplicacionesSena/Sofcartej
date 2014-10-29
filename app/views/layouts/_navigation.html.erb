@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Sofcartej</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  </head>
+<body>
+
+<header class="navbar">
+  <div class="container-fluid expanded-panel">
+    <div class="row">
+      <div id="log" class="col-xs-12 col-sm-2">
+        <a href="#">Sofcartej</a>
+      </div>
+      <div id="top-panel" class="col-xs-12 col-sm-10">
+        <div class="row">
+          <div class="col-xs-8 col-sm-4">
+            <a href="#" class="show-sidebar"> 
+               <i class="fa fa-bars"></i>
+            </a>
+          </div>
+    <div id="carousel-example-generic" class="carousel slide ban" data-ride="carousel">
+
+       
+        <div class="carousel-inner bano">
+            <div class="item active bami">
+                
+              <%= image_tag ("1.jpg"), class: "img-thumbnail" ,  height: '150', width: '800'%>
+            </div>
+            <div class="item bami">
+               <%= image_tag ("2.jpg"), class: "img-thumbnail" ,  height: '150', width: '800'%>
+                 
+            </div>
+            <div class="item bami">
+               <%= image_tag ("3.jpg"), class: "img-thumbnail",  height: '150', width: '800' %>
+                 
+            </div>
+            <div class="item bami">
+               <%= image_tag ("4.png"), class: "img-thumbnail",  height: '150', width: '800' %>
+                 <div class="carousel-caption"></div>
+            </div>
+        </div>
+        <a class="izq  " data-slide="prev" href="#carousel-example-generic" data-toggle="tooltip" data-placement="top" title="Anterior"><i class="fa fa-arrow-left"></i></a>
+        <a class="der  " data-slide="next" href="#carousel-example-generic" data-toggle="tooltip" data-placement="top" title="Siguiente"><i class="fa fa-arrow-right"></i></a>
+
+      </div>    
+    </div>  
+          <div class="col-xs-4 col-sm-8 top-panel-right">
+            <ul class="nav navbar-nav pull-right panel-menu">
+            
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
+                  <div class="avatar">
+                  <%= image_tag ("avatar.jpg"), class: "img-rounded" %>
+                   
+                  </div>
+                  <i class="fa fa-angle-down pull-right"></i>
+                  <div class="user-mini pull-right">
+                    <span class="welcome">Bievenido,</span>
+                    <span>Nombre_Usuario</span>
+                  </div>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-user"></i>
+                      <span>Perfil</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-cog"></i>
+                      <span>Opciones</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-power-off"></i>
+                      <span>Salir</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!--Menu-->
+<div id="main" class="container-fluid">
+  <div class="row">
+    <div id="sidebar-l" class="col-xs-2 col-sm-2">
+      <ul class="nav main-menu">
+        <li class="nar">
+          <a href="/tipos_telas" class=" ajax-link">
+            <i class="fa fa-search"></i>
+            <span class="hidden-xs">Características</span>
+          </a>
+        </li>
+        <li class="ver">
+          <a href="#" class=" ajax-link">
+            <i class="fa fa-th-list"></i>
+            <span class="hidden-xs">Clasificaciones</span>
+          </a>
+        </li>
+        <li class="nar">
+        <a href="/usos" class=" ajax-link">
+          <i class="fa fa-hand-o-right"></i>
+          <span class="hidden-xs">Usos</span>
+          </a>
+        </li>
+        <li class="ver">
+          <a href="#" class=" ajax-link">
+            <i class="fa fa-mail-forward"></i>
+            <span class="hidden-xs">Acabados</span>
+          </a>
+        </li>
+        <li class="nar">
+          <a href="#" class=" ajax-link">
+            <i class="fa fa-edit"></i>
+            <span class="hidden-xs">Bases</span>
+          </a>
+        </li>
+        <li class="ver">
+          <a href="#" class=" ajax-link">
+            <i class="fa fa-globe"></i>
+            <span class="hidden-xs">Referencias</span>
+          </a>
+        </li>
+        <li class="nar">
+          <a href="#" class=" ajax-link">
+            <i class="fa fa-group"></i>
+            <span class="hidden-xs">Proveedores</span>
+          </a>
+        </li>
+        <li class="ver">
+          <a href="#" class=" ajax-link">
+            <i class="fa fa-male"></i>
+            <span class="hidden-xs">Usuarios</span>
+          </a>
+        </li>
+        <li class="nar">
+          <a href="#" class=" ajax-link">
+            <i class="fa fa-star"></i>
+            <span class="hidden-xs">Extras</span>
+          </a>
+        </li>
+         
+      </ul>
+      <%#
+    <a href="#" class="show-sidebar cerr"><i class="fa fa-arrow-circle-left"></i><p class="p1">Cerrar Menú</p></a>
+
+  <div class="row">
+      <div id="breadcrumb" class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="#">Sofcartej</a></li>
+          <li><a href="#">Caracteristicas</a></li>
+          
+        </ol>
+      </div>
+
+    </div>
+
+    %>
+    </div><%#
+    <a href="#" class="show-sidebar abr"><i class="fa fa-arrow-circle-right"></i></a>%>
+    <!--Contenido-->
+  <div id="content" class="col-xs-12 col-sm-10">
+      
+    
+    <div class="contenido">
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+
+       
+    </div>
+  </div>
+</div>
+<div id="foo" class="">
+      <ol class="breadcrumb">
+        <li><a href="#">Link1</a></li>
+        <li><a href="#">Link2</a></li>
+        <li><a href="#">Link3</a></li>
+      </ol>
+    </div>
+<!--Jquery-->
+<script src="plugins/jquery/jquery-2.1.0.min.js"></script>
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="js/devoops.js"></script>
+
+</body>
+</html>
