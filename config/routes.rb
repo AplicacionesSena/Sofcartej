@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  resources :telas
+
+  resources :bases_telas
+
+  resources :referencias_comerciales
+
+  resources :acabados
+
+  resources :proveedores
+
+  resources :clasificaciones
+
+  get 'sofcartej/inicio'
+
+  get 'sofcartej/sofcartej'
+
   resources :tipos_telas
 
   resources :usos
@@ -7,7 +23,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'usos#index'
+  root 'sofcartej#inicio'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  tiposTela_id: 
+  basesTela_id: 
+  proveedore_id: 
+  referenciasComerciale_id: 
+  composicion: MyString
+  anchoOrillo: MyString
+  uso_id: 
+  acabado_id: 
+  peso: MyString
+  pesoUnidad: MyString
+  fichaTecnica: MyString
+  imagen: MyString
+
+two:
+  nombre: MyString
+  tiposTela_id: 
+  basesTela_id: 
+  proveedore_id: 
+  referenciasComerciale_id: 
+  composicion: MyString
+  anchoOrillo: MyString
+  uso_id: 
+  acabado_id: 
+  peso: MyString
+  pesoUnidad: MyString
+  fichaTecnica: MyString
+  imagen: MyString

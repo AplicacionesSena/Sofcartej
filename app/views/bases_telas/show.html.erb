@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Clasificacione:</strong>
+  <%= @bases_tela.clasificacione.nombre %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @bases_tela.nombre %>
+</p>
+
+<%= link_to 'Editar', edit_bases_tela_path(@bases_tela) %> |
+<%= link_to 'Atras', bases_telas_path %>

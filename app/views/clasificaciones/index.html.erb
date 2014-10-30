@@ -1,0 +1,27 @@
+<h1>Clasificaciones de telas</h1>
+
+<table class="table table-hover table-heading">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th colspan="3">Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clasificaciones.each do |clasificacione| %>
+      <tr>
+        <td><%= clasificacione.nombre %></td>
+        <td><%= clasificacione.descripcion %></td>
+        <td><%= button_to 'Ver', clasificacione, class: "btn btn-success", :method => "get" %></td>
+        <td><%= link_to 'Editar', edit_clasificacione_path(clasificacione), class: "btn btn-primary", :method => "get" %></td>
+        <td><%= link_to 'Eliminar', clasificacione, method: :delete, data: { confirm: 'Estas segur@?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'Nueva Clasificación', new_clasificacione_path, class: "btn btn-success btn-lg", :method => "get" %>

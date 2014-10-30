@@ -1,0 +1,21 @@
+<%= form_for(@referencias_comerciale) do |f| %>
+  <% if @referencias_comerciale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@referencias_comerciale.errors.count, "error") %> prohibited this referencias_comerciale from being saved:</h2>
+
+      <ul>
+      <% @referencias_comerciale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Guardar", class: "btn btn-success"%>
+  </div>
+<% end %>

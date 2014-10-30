@@ -1,0 +1,31 @@
+<h1>Lista de proveedores</h1>
+
+<table class="table table-hover table-heading">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Telefono</th>
+      <th>Direccion</th>
+      <th>Correo</th>
+      <th colspan="3">Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proveedores.each do |proveedore| %>
+      <tr>
+        <td><%= proveedore.nombre %></td>
+        <td><%= proveedore.telefono %></td>
+        <td><%= proveedore.direccion %></td>
+        <td><%= proveedore.correo %></td>
+        <td><%= button_to 'Ver', proveedore, class: "btn btn-success", :method => "get" %></td>
+        <td><%= button_to 'Editar', edit_proveedore_path(proveedore), class: "btn btn-primary", :method => "get" %></td>
+        <td><%= button_to 'Eliminar', proveedore, method: :delete, data: { confirm: 'Estas segur@?' }, class: "btn btn-danger"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'Nuevo proveedor', new_proveedore_path, class: "btn btn-success btn-lg", :method => "get"  %>
