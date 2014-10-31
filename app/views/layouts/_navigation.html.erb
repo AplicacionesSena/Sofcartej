@@ -13,12 +13,13 @@
   <div class="container-fluid expanded-panel">
     <div class="row">
       <div id="log" class="col-xs-12 col-sm-2" >
-        <a href="/sofcartej/inicio" >Sofcartej</a>
+        <a href="/sofcartej/inicio" class="pulse" >Sofcartej</a>
       </div>
       <div id="top-panel" class="col-xs-12 col-sm-10">
         <div class="row">
           <div class="col-xs-8 col-sm-4">
-            <a href="#" class="show-sidebar"> 
+            <a href="#" class="show-sidebar">
+              
                <i class="fa fa-bars"></i>
             </a>
           </div>
@@ -47,6 +48,8 @@
         <a class="der  " data-slide="next" href="#carousel-example-generic" data-toggle="tooltip" data-placement="top" title="Siguiente"><i class="fa fa-arrow-right"></i></a>
 
       </div>    
+
+      
     </div>  
           <div class="col-xs-4 col-sm-8 top-panel-right">
             <ul class="nav navbar-nav pull-right panel-menu">
@@ -89,7 +92,7 @@
 <!--Menu-->
 <div id="main" class="container-fluid">
   <div class="row">
-    <div id="sidebar-l" class="col-xs-2 col-sm-2">
+    <div id="sidebar-l" class="col-xs-2 col-sm-2 ">
       <ul class="nav main-menu">
         <li class="nar">
           <a href="/telas" class=" ajax-link">
@@ -188,13 +191,13 @@
     </div>
   </div>
 </div>
+<!-- FOOTER -->
 <div id="foo" class="">
-      <ol class="breadcrumb">
-        <li><a href="#">Link1</a></li>
-        <li><a href="#">Link2</a></li>
-        <li><a href="#">Link3</a></li>
-      </ol>
-    </div>
+     <footer class="txt-default">Sofcartej | SENA</footer>
+
+</div>
+
+
 <!--Jquery-->
 <script src="plugins/jquery/jquery-2.1.0.min.js"></script>
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -204,16 +207,12 @@
  //location.reload(true);
 // window.location.reload()
 
-(function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem( 'firstLoad' ) )
-    {
+(function(){
+  if( window.localStorage ){
+    if( !localStorage.getItem( 'firstLoad' ) ){
       localStorage[ 'firstLoad' ] = true;
       window.location.reload();
-    }  
-    else
+    }else
       localStorage.removeItem( 'firstLoad' );
   }
 })();

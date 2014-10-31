@@ -1,11 +1,11 @@
-<h1>Clasificaciones de telas</h1>
-
+<center><h1>Clasificaciones de telas</h1><br>
+<div class="peque">
 <table class="table table-hover table-heading">
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Descripción</th>
-      <th colspan="3">Opciones</th>
+      <th class="cen">Nombre</th>
+      <th class="cen">Descripción</th>
+      <th class="cen" colspan="3">Opciones</th>
     </tr>
   </thead>
 
@@ -14,14 +14,24 @@
       <tr>
         <td><%= clasificacione.nombre %></td>
         <td><%= clasificacione.descripcion %></td>
-        <td><%= button_to 'Ver', clasificacione, class: "btn btn-success", :method => "get" %></td>
-        <td><%= link_to 'Editar', edit_clasificacione_path(clasificacione), class: "btn btn-primary", :method => "get" %></td>
-        <td><%= link_to 'Eliminar', clasificacione, method: :delete, data: { confirm: 'Estas segur@?' }, class: "btn btn-danger" %></td>
+         <td>
+          <div class="btn-group">
+            <a href="#"> </a>
+            <ul class="list-inline">
+              <li><%= link_to '<button class="btn btn-success"><i class="fa fa-eye neg"></i> Ver</button>'.html_safe, clasificacione %></li>
+              <li> <%= link_to '<button class="btn btn-primary"> <i class="fa fa-wrench neg"></i> Editar</button>'.html_safe, edit_clasificacione_path(clasificacione) %></li>
+              <li> <%= link_to '<button class="btn btn-danger"><i class="fa fa-times neg"></i> Eliminar</button>'.html_safe, clasificacione, method: :delete, data: { confirm: 'Estas segur@?' }%></li>
+            </ul>
+          </div>
+       
+       
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= button_to 'Nueva Clasificación', new_clasificacione_path, class: "btn btn-success btn-lg", :method => "get" %>
+</center>
