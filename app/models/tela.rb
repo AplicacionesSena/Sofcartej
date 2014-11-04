@@ -5,4 +5,5 @@ class Tela < ActiveRecord::Base
   belongs_to :referenciasComerciale
   belongs_to :uso
   belongs_to :acabado
+  has_many :images, :dependent => :destroy
 end

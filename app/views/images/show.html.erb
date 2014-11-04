@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= image_tag @image.imagen.url, height: '550', width: '550' %>
+</p>
+
+<%= link_to 'Edit', edit_tela_image_path(@tela,@image) %> |
+<%= link_to 'Back', tela_images_path(@tela) %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030171153) do
+ActiveRecord::Schema.define(version: 20141104182539) do
 
   create_table "acabados", force: true do |t|
     t.string   "nombre"
@@ -34,6 +34,19 @@ ActiveRecord::Schema.define(version: 20141030171153) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "images", force: true do |t|
+    t.string   "imagen"
+    t.integer  "tela_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "imagen_file_name"
+    t.string   "imagen_content_type"
+    t.integer  "imagen_file_size"
+    t.datetime "imagen_updated_at"
+  end
+
+  add_index "images", ["tela_id"], name: "index_images_on_tela_id"
 
   create_table "proveedores", force: true do |t|
     t.string   "nombre"
@@ -63,17 +76,9 @@ ActiveRecord::Schema.define(version: 20141030171153) do
     t.string   "peso"
     t.string   "pesoUnidad"
     t.string   "fichaTecnica"
-    t.string   "imagen"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "telas", ["acabado_id"], name: "index_telas_on_acabado_id"
-  add_index "telas", ["basesTela_id"], name: "index_telas_on_basesTela_id"
-  add_index "telas", ["proveedore_id"], name: "index_telas_on_proveedore_id"
-  add_index "telas", ["referenciasComerciale_id"], name: "index_telas_on_referenciasComerciale_id"
-  add_index "telas", ["tiposTela_id"], name: "index_telas_on_tiposTela_id"
-  add_index "telas", ["uso_id"], name: "index_telas_on_uso_id"
 
   create_table "tipos_telas", force: true do |t|
     t.string   "nombre"

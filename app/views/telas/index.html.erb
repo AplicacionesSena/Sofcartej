@@ -1,5 +1,4 @@
 <center><h1>Características</h1>
-<br>
 </center>
 <%= button_to 'Nueva tela', new_tela_path, class: "btn btn-success btn-lg", :method => "get"  %>
 <center>
@@ -23,6 +22,7 @@
     <tr>
       <th class="cen">Nombre</th>
       <th class="cen">Tipo de tela</th>
+      <th class="cen">Clasificación</th>
       <th class="cen">Base</th>
       <th class="cen">Proveedor</th>
       <th class="cen">Ref. Comercial</th>
@@ -33,7 +33,7 @@
       <th class="cen">Peso</th>
       <th class="cen">Peso x unidad</th>
       <th class="cen">Ficha tecnica</th>
-      <th class="cen">Imagen</th>
+      <th class="cen">Imagenes</th>
       <th class="cen" colspan="3">Opciones</th>
     </tr>
   </thead>
@@ -42,6 +42,7 @@
       <tr>
         <td><%= tela.nombre %></td>
         <td><%= tela.tiposTela.nombre %></td>
+        <td><%= tela.basesTela.clasificacione.nombre %></td>
         <td><%= tela.basesTela.nombre %></td>
         <td><%= tela.proveedore.nombre %></td>
         <td><%= tela.referenciasComerciale.nombre %></td>
@@ -52,7 +53,10 @@
         <td><%= tela.peso %></td>
         <td><%= tela.pesoUnidad %></td>
         <td><%= tela.fichaTecnica %></td>
-        <td><%= tela.imagen %></td>
+        <td><a href="#"> </a>
+            <ul class="list-inline">
+              <li><%= link_to '<button class="btn btn-default"><small>Fotos →</small><i class="fa fa-picture-o neg"></i></button>'.html_safe, tela_images_path(tela) %></li>
+            </ul></td>
         <td>
           <div class="btn-group">
             <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
@@ -63,8 +67,7 @@
               <li> <%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, tela, method: :delete, data: { confirm: 'Estas segur@?' }%></li>
             </ul>
           </div>
-       
-       
+            
         </td>
       </tr>
     <% end %>

@@ -47,3 +47,7 @@ group :development do
 	gem 'rails_layout'
 end
 gem 'ransack'
+gem "simple_form"
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+

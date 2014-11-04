@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  resources :images
+
   resources :telas
+
+  resources :telas do
+    resources :images
+  end
 
   resources :bases_telas
 

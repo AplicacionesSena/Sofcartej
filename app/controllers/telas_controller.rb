@@ -71,6 +71,6 @@ class TelasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tela_params
-      params.require(:tela).permit(:nombre, :tiposTela_id, :basesTela_id, :proveedore_id, :referenciasComerciale_id, :composicion, :anchoOrillo, :uso_id, :acabado_id, :peso, :pesoUnidad, :fichaTecnica, :imagen)
+      params.require(:tela).permit(:nombre, :tiposTela_id, :basesTela_id, :proveedore_id, :referenciasComerciale_id, :composicion, :anchoOrillo, :uso_id, :acabado_id, :peso, :pesoUnidad, :fichaTecnica)
     end
 end

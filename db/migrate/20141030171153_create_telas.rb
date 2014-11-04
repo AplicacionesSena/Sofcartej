@@ -13,7 +13,6 @@ class CreateTelas < ActiveRecord::Migration
       t.string :peso
       t.string :pesoUnidad
       t.string :fichaTecnica
-      t.string :imagen
 
       t.timestamps
     end

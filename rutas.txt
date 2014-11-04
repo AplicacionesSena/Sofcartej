@@ -1,0 +1,92 @@
+                     Prefix Verb   URI Pattern                                 Controller#Action
+                     images GET    /images(.:format)                           images#index
+                            POST   /images(.:format)                           images#create
+                  new_image GET    /images/new(.:format)                       images#new
+                 edit_image GET    /images/:id/edit(.:format)                  images#edit
+                      image GET    /images/:id(.:format)                       images#show
+                            PATCH  /images/:id(.:format)                       images#update
+                            PUT    /images/:id(.:format)                       images#update
+                            DELETE /images/:id(.:format)                       images#destroy
+                      telas GET    /telas(.:format)                            telas#index
+                            POST   /telas(.:format)                            telas#create
+                   new_tela GET    /telas/new(.:format)                        telas#new
+                  edit_tela GET    /telas/:id/edit(.:format)                   telas#edit
+                       tela GET    /telas/:id(.:format)                        telas#show
+                            PATCH  /telas/:id(.:format)                        telas#update
+                            PUT    /telas/:id(.:format)                        telas#update
+                            DELETE /telas/:id(.:format)                        telas#destroy
+                tela_images GET    /telas/:tela_id/images(.:format)            images#index
+                            POST   /telas/:tela_id/images(.:format)            images#create
+             new_tela_image GET    /telas/:tela_id/images/new(.:format)        images#new
+            edit_tela_image GET    /telas/:tela_id/images/:id/edit(.:format)   images#edit
+                 tela_image GET    /telas/:tela_id/images/:id(.:format)        images#show
+                            PATCH  /telas/:tela_id/images/:id(.:format)        images#update
+                            PUT    /telas/:tela_id/images/:id(.:format)        images#update
+                            DELETE /telas/:tela_id/images/:id(.:format)        images#destroy
+                            GET    /telas(.:format)                            telas#index
+                            POST   /telas(.:format)                            telas#create
+                            GET    /telas/new(.:format)                        telas#new
+                            GET    /telas/:id/edit(.:format)                   telas#edit
+                            GET    /telas/:id(.:format)                        telas#show
+                            PATCH  /telas/:id(.:format)                        telas#update
+                            PUT    /telas/:id(.:format)                        telas#update
+                            DELETE /telas/:id(.:format)                        telas#destroy
+                bases_telas GET    /bases_telas(.:format)                      bases_telas#index
+                            POST   /bases_telas(.:format)                      bases_telas#create
+             new_bases_tela GET    /bases_telas/new(.:format)                  bases_telas#new
+            edit_bases_tela GET    /bases_telas/:id/edit(.:format)             bases_telas#edit
+                 bases_tela GET    /bases_telas/:id(.:format)                  bases_telas#show
+                            PATCH  /bases_telas/:id(.:format)                  bases_telas#update
+                            PUT    /bases_telas/:id(.:format)                  bases_telas#update
+                            DELETE /bases_telas/:id(.:format)                  bases_telas#destroy
+    referencias_comerciales GET    /referencias_comerciales(.:format)          referencias_comerciales#index
+                            POST   /referencias_comerciales(.:format)          referencias_comerciales#create
+ new_referencias_comerciale GET    /referencias_comerciales/new(.:format)      referencias_comerciales#new
+edit_referencias_comerciale GET    /referencias_comerciales/:id/edit(.:format) referencias_comerciales#edit
+     referencias_comerciale GET    /referencias_comerciales/:id(.:format)      referencias_comerciales#show
+                            PATCH  /referencias_comerciales/:id(.:format)      referencias_comerciales#update
+                            PUT    /referencias_comerciales/:id(.:format)      referencias_comerciales#update
+                            DELETE /referencias_comerciales/:id(.:format)      referencias_comerciales#destroy
+                   acabados GET    /acabados(.:format)                         acabados#index
+                            POST   /acabados(.:format)                         acabados#create
+                new_acabado GET    /acabados/new(.:format)                     acabados#new
+               edit_acabado GET    /acabados/:id/edit(.:format)                acabados#edit
+                    acabado GET    /acabados/:id(.:format)                     acabados#show
+                            PATCH  /acabados/:id(.:format)                     acabados#update
+                            PUT    /acabados/:id(.:format)                     acabados#update
+                            DELETE /acabados/:id(.:format)                     acabados#destroy
+                proveedores GET    /proveedores(.:format)                      proveedores#index
+                            POST   /proveedores(.:format)                      proveedores#create
+             new_proveedore GET    /proveedores/new(.:format)                  proveedores#new
+            edit_proveedore GET    /proveedores/:id/edit(.:format)             proveedores#edit
+                 proveedore GET    /proveedores/:id(.:format)                  proveedores#show
+                            PATCH  /proveedores/:id(.:format)                  proveedores#update
+                            PUT    /proveedores/:id(.:format)                  proveedores#update
+                            DELETE /proveedores/:id(.:format)                  proveedores#destroy
+            clasificaciones GET    /clasificaciones(.:format)                  clasificaciones#index
+                            POST   /clasificaciones(.:format)                  clasificaciones#create
+         new_clasificacione GET    /clasificaciones/new(.:format)              clasificaciones#new
+        edit_clasificacione GET    /clasificaciones/:id/edit(.:format)         clasificaciones#edit
+             clasificacione GET    /clasificaciones/:id(.:format)              clasificaciones#show
+                            PATCH  /clasificaciones/:id(.:format)              clasificaciones#update
+                            PUT    /clasificaciones/:id(.:format)              clasificaciones#update
+                            DELETE /clasificaciones/:id(.:format)              clasificaciones#destroy
+           sofcartej_inicio GET    /sofcartej/inicio(.:format)                 sofcartej#inicio
+        sofcartej_sofcartej GET    /sofcartej/sofcartej(.:format)              sofcartej#sofcartej
+                tipos_telas GET    /tipos_telas(.:format)                      tipos_telas#index
+                            POST   /tipos_telas(.:format)                      tipos_telas#create
+             new_tipos_tela GET    /tipos_telas/new(.:format)                  tipos_telas#new
+            edit_tipos_tela GET    /tipos_telas/:id/edit(.:format)             tipos_telas#edit
+                 tipos_tela GET    /tipos_telas/:id(.:format)                  tipos_telas#show
+                            PATCH  /tipos_telas/:id(.:format)                  tipos_telas#update
+                            PUT    /tipos_telas/:id(.:format)                  tipos_telas#update
+                            DELETE /tipos_telas/:id(.:format)                  tipos_telas#destroy
+                       usos GET    /usos(.:format)                             usos#index
+                            POST   /usos(.:format)                             usos#create
+                    new_uso GET    /usos/new(.:format)                         usos#new
+                   edit_uso GET    /usos/:id/edit(.:format)                    usos#edit
+                        uso GET    /usos/:id(.:format)                         usos#show
+                            PATCH  /usos/:id(.:format)                         usos#update
+                            PUT    /usos/:id(.:format)                         usos#update
+                            DELETE /usos/:id(.:format)                         usos#destroy
+                       root GET    /                                           sofcartej#inicio
