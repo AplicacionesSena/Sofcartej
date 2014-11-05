@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104182539) do
+ActiveRecord::Schema.define(version: 20141105181957) do
 
   create_table "acabados", force: true do |t|
     t.string   "nombre"
@@ -78,6 +78,10 @@ ActiveRecord::Schema.define(version: 20141104182539) do
     t.string   "fichaTecnica"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   create_table "tipos_telas", force: true do |t|
@@ -90,6 +94,16 @@ ActiveRecord::Schema.define(version: 20141104182539) do
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "videos", force: true do |t|
+    t.string   "titulo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "vid_file_name"
+    t.string   "vid_content_type"
+    t.integer  "vid_file_size"
+    t.datetime "vid_updated_at"
   end
 
 end

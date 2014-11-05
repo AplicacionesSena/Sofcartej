@@ -1,4 +1,4 @@
-<h1>Imágenes</h1>
+<h1>Imágenes</h1><br>
 <div class="conim">
 
     <% @images.each do |image| %>
@@ -19,4 +19,10 @@
 </div>
 <br>
 
-<%= button_to 'Nueva Imagen', new_tela_image_path(@tela), class: "btn btn-success", :method => "get" %>
+<div class="btn-group">
+  <a href="#"> </a>
+  <ul class="list-inline">
+    <li><%= button_to 'Atras', telas_path, class: "btn btn-default", :method => "get" %></li>
+    <li><%= button_to 'Nueva Imagen', new_tela_image_path(@tela), class: "btn btn-success", :method => "get" %> </li>  
+  </ul>
+</div

@@ -55,15 +55,8 @@
   <%= @tela.pesoUnidad %>
 </p>
 
-<p>
-  <strong>Fichatecnica:</strong>
-  <%= @tela.fichaTecnica %>
-</p>
+<%#= video_tag(@tela.document.url, height: '200', width: '300', controls: true, autobuffer: true) %>
 
-<p>
-  <strong>Imagen:</strong>
-  <%= @tela.imagen %>
-</p>
 
 <%= link_to 'Editar', edit_tela_path(@tela) %> |
 <%= link_to 'Atras', telas_path %>

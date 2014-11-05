@@ -52,7 +52,7 @@
         <td><%= tela.acabado.nombre %></td>
         <td><%= tela.peso %></td>
         <td><%= tela.pesoUnidad %></td>
-        <td><%= tela.fichaTecnica %></td>
+        <td><%= link_to '<button class="btn btn-default">Ver</button>'.html_safe, tela.document.url %></td>
         <td><a href="#"> </a>
             <ul class="list-inline">
               <li><%= link_to '<button class="btn btn-default"><small>Fotos →</small><i class="fa fa-picture-o neg"></i></button>'.html_safe, tela_images_path(tela) %></li>

@@ -49,5 +49,4 @@ end
 gem 'ransack'
 gem "simple_form"
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-
-
+gem "jquery-fileupload-rails"
