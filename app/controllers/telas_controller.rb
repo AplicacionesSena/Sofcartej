@@ -25,40 +25,20 @@ class TelasController < ApplicationController
   # POST /telas.json
   def create
     @tela = Tela.new(tela_params)
+    render action: :new unless @tela.save
 
-    respond_to do |format|
-      if @tela.save
-        format.html { redirect_to @tela, notice: 'Tela was successfully created.' }
-        format.json { render :show, status: :created, location: @tela }
-      else
-        format.html { render :new }
-        format.json { render json: @tela.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /telas/1
   # PATCH/PUT /telas/1.json
   def update
-    respond_to do |format|
-      if @tela.update(tela_params)
-        format.html { redirect_to @tela, notice: 'Tela was successfully updated.' }
-        format.json { render :show, status: :ok, location: @tela }
-      else
-        format.html { render :edit }
-        format.json { render json: @tela.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @tela.update_attributes(tela_params)
   end
 
   # DELETE /telas/1
   # DELETE /telas/1.json
   def destroy
     @tela.destroy
-    respond_to do |format|
-      format.html { redirect_to telas_url, notice: 'Tela was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private

@@ -4,7 +4,7 @@
 <center>
 <% @videos.each do |video| %>
 	<%if  video.id == 1 %>
-	 <%= video_tag(video.vid.url, height: '350', width: '550', autobuffer: true, autoplay: true) %>
+	 <%= video_tag(video.vid.url, height: '350', width: '550', autobuffer: true, autoplay: true,:loop => true) %>
 	<% end %>
 <% end %>
 </center>

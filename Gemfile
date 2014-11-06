@@ -50,3 +50,4 @@ gem "simple_form"
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem "jquery-fileupload-rails"
 gem 'will_paginate', '~> 3.0'
+gem 'lazybox'

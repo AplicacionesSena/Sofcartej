@@ -2445,7 +2445,7 @@ box-shadow:         inset 0px -1px 5px 0px rgba(50, 50, 50, 1);
 -webkit-box-shadow: 0px 0px 13px 3px rgba(226, 146, 102, 1);
 -moz-box-shadow:    0px 0px 13px 3px rgba(226, 146, 102, 1);
 box-shadow:         0px 0px 13px 3px rgba(226, 146, 102, 1);
-
+border: 2px solid #fc7323;
   height: 400px;
   overflow-y:scroll;
   overflow-x:scroll; 
@@ -2461,6 +2461,7 @@ box-shadow:         0px 0px 13px 3px rgba(226, 146, 102, 1);
   color: black;
 }
 .peque{
+  border: 2px solid #fc7323;
   width: 600px;
   text-align: center;
   -webkit-box-shadow: 0px 0px 13px 3px rgba(226, 146, 102, 1);
@@ -2472,6 +2473,7 @@ height: 300px;
   overflow-x:none;
 }
 .media{
+  border: 2px solid #fc7323;
     -webkit-box-shadow: 0px 0px 13px 3px rgba(226, 146, 102, 1);
 -moz-box-shadow:    0px 0px 13px 3px rgba(226, 146, 102, 1);
 box-shadow:         0px 0px 13px 3px rgba(226, 146, 102, 1);
@@ -2648,5 +2650,41 @@ box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
   left: -350px;
   top: -65px;
 }
+
+.form1{
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+}
+.form2{
+  border-left: 1px dashed black;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+}
+/* lazybox */
+#lazybox.confirm {
+border-radius: 5;
+font-weight: bold;
+background: linear-gradient(#e2e2e2, white);
+}
+#lazybox.sticker {
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 50px 100px;
+border-top-left-radius: 100px 50px;}
+#lazybox{
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 50px 50px;
+border-top-left-radius: 50px 50px;
+text-align: center;
+border: 4px double #000000;}
+#lazybox.lazybox {
+padding: 0;
+border: 0;
+background: transparent;
+width: 45%;
+box-shadow: none;
+}
+
 
 
