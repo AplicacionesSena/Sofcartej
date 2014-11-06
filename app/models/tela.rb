@@ -16,7 +16,10 @@ class Tela < ActiveRecord::Base
     validates_attachment_presence :document 
      validates_attachment_content_type :document, :content_type =>['application/pdf'],
                                                        :message => ', Solo se permiten archivos pdf. '
-
+def self.search(search, page)
+  where(['nombre LIKE :s OR composicion LIKE :s OR peso LIKE :s', :s => 
+    "%#{search}%".upcase]).paginate(page: page, per_page: 5).order("nombre")
+end
 
 
 end

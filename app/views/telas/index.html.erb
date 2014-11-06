@@ -2,20 +2,18 @@
 </center>
 <%= button_to 'Nueva tela', new_tela_path, class: "btn btn-success btn-lg", :method => "get"  %>
 <center>
-<%= search_form_for @search do |f| %>
-  <%= f.condition_fields do |c| %>
-  <div class="field">
-    <%= c.attribute_fields do |a| %>
-      <%= a.attribute_select %>
-    <% end %>
-    <%= c.predicate_select only: %i(cont) %>
-    <%= c.value_fields do |v| %>
-      <%= v.text_field :value %>
-    <% end %>
-    </div>
+<%= form_tag telas_path, :method => 'get' do %>
+  <% content_tag :label do %>
+    Buscar por Nombre, Composición o Peso: 
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Buscar", :name => nil %>
   <% end %>
-  <div class="actions"><%= f.submit "Buscar" %></div>
-<% end %>
+<% end %><br>
+<div class="pagi">
+<span class="label gran"><%= will_paginate @telas, :previous_label => '<span class="label label-success gran">← Anterior</span>'.html_safe, :next_label => '<span class="label label-success gran">Siguiente →</span>'.html_safe %></span>
+</div>
+<div class="conta"><span class="label label-default gran">Telas: <%= @telas.count %></span></div>
+<br>
 <div class="con cen">
 <table class="table table-hover table-heading table-striped">
   <thead>
@@ -33,8 +31,7 @@
       <th class="cen">Peso</th>
       <th class="cen">Peso x unidad</th>
       <th class="cen">Ficha tecnica</th>
-      <th class="cen">Imagenes</th>
-      <th class="cen" colspan="3">Opciones</th>
+      <th class="cen" colspan="2">Opciones</th>
     </tr>
   </thead>
   <tbody>

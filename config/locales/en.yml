@@ -21,10 +21,3 @@
 
 en:
   hello: "Hello world"
-  ransack:
-    asc: ascending
-    desc: descending
-    predicates:
-      cont: contenga
-      cont_any: contenga algún
-      cont_all: contenga todos

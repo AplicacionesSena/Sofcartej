@@ -46,7 +46,7 @@ group :development do
 	gem 'quiet_assets'
 	gem 'rails_layout'
 end
-gem 'ransack'
 gem "simple_form"
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem "jquery-fileupload-rails"
+gem 'will_paginate', '~> 3.0'
