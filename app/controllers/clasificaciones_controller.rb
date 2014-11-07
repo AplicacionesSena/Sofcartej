@@ -25,40 +25,19 @@ class ClasificacionesController < ApplicationController
   # POST /clasificaciones.json
   def create
     @clasificacione = Clasificacione.new(clasificacione_params)
-
-    respond_to do |format|
-      if @clasificacione.save
-        format.html { redirect_to @clasificacione, notice: 'Clasificacione was successfully created.' }
-        format.json { render :show, status: :created, location: @clasificacione }
-      else
-        format.html { render :new }
-        format.json { render json: @clasificacione.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @clasificacione.save
   end
 
   # PATCH/PUT /clasificaciones/1
   # PATCH/PUT /clasificaciones/1.json
   def update
-    respond_to do |format|
-      if @clasificacione.update(clasificacione_params)
-        format.html { redirect_to @clasificacione, notice: 'Clasificacione was successfully updated.' }
-        format.json { render :show, status: :ok, location: @clasificacione }
-      else
-        format.html { render :edit }
-        format.json { render json: @clasificacione.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @clasificacione.update_attributes(clasificacione_params)
   end
 
   # DELETE /clasificaciones/1
   # DELETE /clasificaciones/1.json
   def destroy
     @clasificacione.destroy
-    respond_to do |format|
-      format.html { redirect_to clasificaciones_url, notice: 'Clasificacione was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private

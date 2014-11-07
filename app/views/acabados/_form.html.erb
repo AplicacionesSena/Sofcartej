@@ -1,4 +1,4 @@
-<%= form_for(@acabado) do |f| %>
+<%= simple_form_for(@acabado, :html => { :class => 'form-horizontal', remote: true } ) do |f| %>
   <% if @acabado.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@acabado.errors.count, "error") %> prohibited this acabado from being saved:</h2>

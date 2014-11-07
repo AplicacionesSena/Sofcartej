@@ -25,40 +25,20 @@ class BasesTelasController < ApplicationController
   # POST /bases_telas.json
   def create
     @bases_tela = BasesTela.new(bases_tela_params)
+    render action: :new unless @bases_tela.save
 
-    respond_to do |format|
-      if @bases_tela.save
-        format.html { redirect_to @bases_tela, notice: 'Bases tela was successfully created.' }
-        format.json { render :show, status: :created, location: @bases_tela }
-      else
-        format.html { render :new }
-        format.json { render json: @bases_tela.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /bases_telas/1
   # PATCH/PUT /bases_telas/1.json
   def update
-    respond_to do |format|
-      if @bases_tela.update(bases_tela_params)
-        format.html { redirect_to @bases_tela, notice: 'Bases tela was successfully updated.' }
-        format.json { render :show, status: :ok, location: @bases_tela }
-      else
-        format.html { render :edit }
-        format.json { render json: @bases_tela.errors, status: :unprocessable_entity }
-      end
-    end
+     render action: :edit unless @bases_tela.update_attributes(bases_tela_params)
   end
 
   # DELETE /bases_telas/1
   # DELETE /bases_telas/1.json
   def destroy
     @bases_tela.destroy
-    respond_to do |format|
-      format.html { redirect_to bases_telas_url, notice: 'Bases tela was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private

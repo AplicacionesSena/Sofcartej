@@ -1,5 +1,5 @@
 <center><h1>Videos</h1></center>
-<%= button_to 'Nuevo Video', new_video_path, :method => "get", class: "btn btn-success" %>
+<%= button_to 'Nuevo Video', new_video_path, :method => "get", class: "btn btn-success", remote: true %>
 <center>
 <div class="convi">
 <%= form_tag videos_path, :method => 'get' do %>
@@ -15,25 +15,7 @@
 </div>
 <br>
 <div class="conim2">
-    <% @videos.each do |video| %>
-      <div class="coni2">
-     <div class="conit">
-        <div class="btn-group">
-          <a href="#"> </a>
-          <ul class="list-inline">
-            <li class="link"><%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_video_path(video) %>
-            <% if video.id != 1 %></li>
-              <li><%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, video, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-            <%end %>
-          </ul>
-        </div>
-        <hr class="hr1"></div> <div class="ow-server">
-        <%= video.titulo %>
-        <%= video_tag(video.vid.url, height: '310', width: '480', controls: true) %>
-        </div>
-      </div>
-    
-    <% end %>
+    <%= render @videos %>
 </div>
 <br>
 </center>

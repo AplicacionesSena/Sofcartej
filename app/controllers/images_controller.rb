@@ -23,43 +23,37 @@ class ImagesController < ApplicationController
 
   # POST /images
   # POST /images.json
-  def create
-    @image = Image.new(image_params)
-    @image.tela_id = @tela.id
-    respond_to do |format|
-      if @image.save
-        format.html { redirect_to tela_images_path(@tela), notice: 'Image was successfully created.' }
-        format.json { render :show, status: :created, location: @image }
-      else
-        format.html { render :new }
-        format.json { render json: @image.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /images/1
-  # PATCH/PUT /images/1.json
-  def update
-    respond_to do |format|
-      if @image.update(image_params)
-        format.html { redirect_to tela_images_path(@tela), notice: 'Image was successfully updated.' }
-        format.json { render :show, status: :ok, location: @image }
-      else
-        format.html { render :edit }
-        format.json { render json: @image.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /images/1
-  # DELETE /images/1.json
-  def destroy
-    @image.destroy
-    respond_to do |format|
-      format.html { redirect_to tela_images_url(@tela), notice: 'Image was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+   def create
+@image = Image.new(image_params)
+@image.tela_id = @tela.id
+respond_to do |format|
+if @image.save
+format.html { redirect_to tela_images_path(@tela), notice: 'La imagen ha sido creada.' }
+format.json { render :show, status: :created, location: @image }
+else
+format.html { render :new }
+format.json { render json: @image.errors, status: :unprocessable_entity }
+end
+end
+end
+# PATCH/PUT /images/1
+# PATCH/PUT /images/1.json
+def update
+respond_to do |format|
+if @image.update(image_params)
+format.html { redirect_to tela_images_path(@tela), notice: 'La imagen ha sido actualizada.' }
+format.json { render :show, status: :ok, location: @image }
+else
+format.html { render :edit }
+format.json { render json: @image.errors, status: :unprocessable_entity }
+end
+end
+end
+# DELETE /images/1
+# DELETE /images/1.json
+def destroy
+@image.destroy
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,4 +1,4 @@
-<%= form_for(@referencias_comerciale) do |f| %>
+<%= simple_form_for(@referencias_comerciale, :html => { :class => 'form-horizontal', remote: true } ) do |f| %>
   <% if @referencias_comerciale.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@referencias_comerciale.errors.count, "error") %> prohibited this referencias_comerciale from being saved:</h2>

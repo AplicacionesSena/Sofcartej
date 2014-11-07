@@ -1,4 +1,5 @@
-<%= form_for(@uso) do |f| %>
+<%= simple_form_for(@uso, :html => { :class => 'form-horizontal', remote: true } ) do |f| %>
+
   <% if @uso.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@uso.errors.count, "error") %> prohibited this uso from being saved:</h2>

@@ -10,26 +10,12 @@
   </thead>
 
   <tbody>
-    <% @usos.each do |uso| %>
-      <tr>
-        <td><%= uso.nombre %></td>
-        <td>
-          <div class="btn-group">
-            <a href="#"> </a>
-            <ul class="list-inline">
-              <li><%= link_to '<button class="btn btn-success"><i class="fa fa-eye neg"></i> Ver</button>'.html_safe, uso %></li>
-              <li> <%= link_to '<button class="btn btn-primary"> <i class="fa fa-wrench neg"></i> Editar</button>'.html_safe,edit_uso_path(uso) %></li>
-              <li> <%= link_to '<button class="btn btn-danger"><i class="fa fa-times neg"></i> Eliminar</button>'.html_safe, uso, method: :delete, data: { confirm: 'Estas segur@?' }%></li>
-            </ul>
-          </div>  
-        </td>
-      </tr>
-    <% end %>
+    <%= render @usos %>
   </tbody>
 </table>
 </div>
 
 <br>
 
-<%= button_to 'Nuevo Uso', new_uso_path, class: "btn btn-success btn-lg", :method => "get" %>
+<%= button_to 'Nuevo Uso', new_uso_path, class: "btn btn-success btn-lg", :method => "get", remote: true %>
 </center>

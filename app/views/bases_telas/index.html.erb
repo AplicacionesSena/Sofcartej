@@ -10,26 +10,11 @@
   </thead>
 
   <tbody>
-    <% @bases_telas.each do |bases_tela| %>
-      <tr>
-        <td><%= bases_tela.clasificacione.nombre %></td>
-        <td><%= bases_tela.nombre %></td>
-         <td>
-          <div class="btn-group">
-            <a href="#"> </a>
-            <ul class="list-inline">
-              <li><%= link_to '<button class="btn btn-success"><i class="fa fa-eye neg"></i> Ver</button>'.html_safe, bases_tela %></li>
-              <li> <%= link_to '<button class="btn btn-primary"> <i class="fa fa-wrench neg"></i> Editar</button>'.html_safe, edit_bases_tela_path(bases_tela) %></li>
-              <li> <%= link_to '<button class="btn btn-danger"><i class="fa fa-times neg"></i> Eliminar</button>'.html_safe, bases_tela, method: :delete, data: { confirm: 'Estas segur@?' }%></li>
-            </ul>
-          </div>
-        </td>
-      </tr>
-    <% end %>
+    <%= render @bases_telas %>
   </tbody>
 </table>
 </div>
 <br>
 
-<%= button_to 'Nueva base', new_bases_tela_path, class: "btn btn-success btn-lg", :method => "get"%>
+<%= button_to 'Nueva base', new_bases_tela_path, class: "btn btn-success btn-lg", :method => "get", remote: true%>
 </center>

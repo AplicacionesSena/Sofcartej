@@ -25,40 +25,19 @@ class UsosController < ApplicationController
   # POST /usos.json
   def create
     @uso = Uso.new(uso_params)
-
-    respond_to do |format|
-      if @uso.save
-        format.html { redirect_to @uso, notice: 'Uso was successfully created.' }
-        format.json { render :show, status: :created, location: @uso }
-      else
-        format.html { render :new }
-        format.json { render json: @uso.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @uso.save
   end
 
   # PATCH/PUT /usos/1
   # PATCH/PUT /usos/1.json
   def update
-    respond_to do |format|
-      if @uso.update(uso_params)
-        format.html { redirect_to @uso, notice: 'Uso was successfully updated.' }
-        format.json { render :show, status: :ok, location: @uso }
-      else
-        format.html { render :edit }
-        format.json { render json: @uso.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @uso.update_attributes(uso_params)
   end
 
   # DELETE /usos/1
   # DELETE /usos/1.json
   def destroy
     @uso.destroy
-    respond_to do |format|
-      format.html { redirect_to usos_url, notice: 'Uso was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private

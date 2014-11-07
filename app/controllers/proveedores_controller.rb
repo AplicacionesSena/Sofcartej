@@ -25,40 +25,20 @@ class ProveedoresController < ApplicationController
   # POST /proveedores.json
   def create
     @proveedore = Proveedore.new(proveedore_params)
+    ender action: :new unless @proveedore.save
 
-    respond_to do |format|
-      if @proveedore.save
-        format.html { redirect_to @proveedore, notice: 'Proveedore was successfully created.' }
-        format.json { render :show, status: :created, location: @proveedore }
-      else
-        format.html { render :new }
-        format.json { render json: @proveedore.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /proveedores/1
   # PATCH/PUT /proveedores/1.json
   def update
-    respond_to do |format|
-      if @proveedore.update(proveedore_params)
-        format.html { redirect_to @proveedore, notice: 'Proveedore was successfully updated.' }
-        format.json { render :show, status: :ok, location: @proveedore }
-      else
-        format.html { render :edit }
-        format.json { render json: @proveedore.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @proveedore.update_attributes(proveedore_params)
   end
 
   # DELETE /proveedores/1
   # DELETE /proveedores/1.json
   def destroy
     @proveedore.destroy
-    respond_to do |format|
-      format.html { redirect_to proveedores_url, notice: 'Proveedore was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private

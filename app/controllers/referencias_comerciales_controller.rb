@@ -25,40 +25,20 @@ class ReferenciasComercialesController < ApplicationController
   # POST /referencias_comerciales.json
   def create
     @referencias_comerciale = ReferenciasComerciale.new(referencias_comerciale_params)
+    render action: :new unless @referencias_comerciale.save
 
-    respond_to do |format|
-      if @referencias_comerciale.save
-        format.html { redirect_to @referencias_comerciale, notice: 'Referencias comerciale was successfully created.' }
-        format.json { render :show, status: :created, location: @referencias_comerciale }
-      else
-        format.html { render :new }
-        format.json { render json: @referencias_comerciale.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /referencias_comerciales/1
   # PATCH/PUT /referencias_comerciales/1.json
   def update
-    respond_to do |format|
-      if @referencias_comerciale.update(referencias_comerciale_params)
-        format.html { redirect_to @referencias_comerciale, notice: 'Referencias comerciale was successfully updated.' }
-        format.json { render :show, status: :ok, location: @referencias_comerciale }
-      else
-        format.html { render :edit }
-        format.json { render json: @referencias_comerciale.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @referencias_comerciale.update_attributes(referencias_comerciale_params)
   end
 
   # DELETE /referencias_comerciales/1
   # DELETE /referencias_comerciales/1.json
   def destroy
     @referencias_comerciale.destroy
-    respond_to do |format|
-      format.html { redirect_to referencias_comerciales_url, notice: 'Referencias comerciale was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private

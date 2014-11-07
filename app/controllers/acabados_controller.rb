@@ -25,40 +25,19 @@ class AcabadosController < ApplicationController
   # POST /acabados.json
   def create
     @acabado = Acabado.new(acabado_params)
-
-    respond_to do |format|
-      if @acabado.save
-        format.html { redirect_to @acabado, notice: 'Acabado was successfully created.' }
-        format.json { render :show, status: :created, location: @acabado }
-      else
-        format.html { render :new }
-        format.json { render json: @acabado.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :new unless @acabado.save
   end
 
   # PATCH/PUT /acabados/1
   # PATCH/PUT /acabados/1.json
   def update
-    respond_to do |format|
-      if @acabado.update(acabado_params)
-        format.html { redirect_to @acabado, notice: 'Acabado was successfully updated.' }
-        format.json { render :show, status: :ok, location: @acabado }
-      else
-        format.html { render :edit }
-        format.json { render json: @acabado.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @acabado.update_attributes(acabado_params)
   end
 
   # DELETE /acabados/1
   # DELETE /acabados/1.json
   def destroy
     @acabado.destroy
-    respond_to do |format|
-      format.html { redirect_to acabados_url, notice: 'Acabado was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
