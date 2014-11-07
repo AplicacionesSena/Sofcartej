@@ -2685,6 +2685,10 @@ background: transparent;
 width: 45%;
 box-shadow: none;
 }
-
+.conarti{
+  height: 400px;
+  overflow-y: scroll;
+  overflow-x: none; 
+}
 
 

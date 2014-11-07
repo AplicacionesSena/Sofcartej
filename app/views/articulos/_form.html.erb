@@ -1,0 +1,25 @@
+<%= simple_form_for(@articulo, :html => { :class => 'form-horizontal'}, multipart: true, remote: true, authenticity_token: true) do |f| %>
+  <% if @articulo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@articulo.errors.count, "error") %> prohibited this articulo from being saved:</h2>
+
+      <ul>
+      <% @articulo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <label>Articulo</label><br>
+    <%= f.file_field :arti %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Guardar", class: "btn btn-success" %>
+  </div>
+<% end %>

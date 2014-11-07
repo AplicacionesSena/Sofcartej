@@ -17,6 +17,7 @@
 //= require_tree .
 //= require devoops
 //= require lazybox
+//= require jquery.remotipart
 
 $(document).on('ready page:load', function () {
      $.lazybox.settings={ cancelClass: "pure-button", submitClass: 'pure-button pure-button-primary' }

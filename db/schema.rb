@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105181957) do
+ActiveRecord::Schema.define(version: 20141107144532) do
 
   create_table "acabados", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "articulos", force: true do |t|
+    t.string   "titulo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "arti_file_name"
+    t.string   "arti_content_type"
+    t.integer  "arti_file_size"
+    t.datetime "arti_updated_at"
   end
 
   create_table "bases_telas", force: true do |t|

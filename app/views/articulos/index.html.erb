@@ -1,0 +1,11 @@
+<center><h1>Articulos</h1></center><br>
+<%= button_to 'Nuevo Articulo', new_articulo_path, class: "btn btn-success", :method => "get", remote: true %>
+<div class="conarti">
+<ul class="grid cs-style-4">
+    <%= render @articulos %>
+</ul>
+</div>
+
+
+       
+    
