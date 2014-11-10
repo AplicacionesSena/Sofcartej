@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107144532) do
+ActiveRecord::Schema.define(version: 20141110154203) do
 
   create_table "acabados", force: true do |t|
     t.string   "nombre"
@@ -99,6 +99,21 @@ ActiveRecord::Schema.define(version: 20141107144532) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users", force: true do |t|
+    t.string   "email",                         null: false
+    t.string   "crypted_password",              null: false
+    t.string   "salt",                          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "nombre",            limit: nil
+    t.string   "foto_file_name"
+    t.string   "foto_content_type"
+    t.integer  "foto_file_size"
+    t.datetime "foto_updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
   create_table "usos", force: true do |t|
     t.string   "nombre"

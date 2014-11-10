@@ -1,5 +1,7 @@
 <center><h1>Videos</h1></center>
+<% if current_user %>
 <%= button_to 'Nuevo Video', new_video_path, :method => "get", class: "btn btn-success", remote: true %>
+<% end %>
 <center>
 <div class="convi">
 <%= form_tag videos_path, :method => 'get' do %>

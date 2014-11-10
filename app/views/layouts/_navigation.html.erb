@@ -53,28 +53,35 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
                   <div class="avatar">
-                  <%= image_tag ("avatar.jpg"), class: "img-rounded" %>
-                   
+                  <% if current_user %>
+                    <% if current_user.foto_file_name == nil %>
+                      <%= image_tag ("avatar.jpg"), class: "img-rounded" %>
+                    <% else %>
+                      <%= image_tag (current_user.foto.url), class: "img-rounded" %>
+                    <% end %>
+                  <% else %>
+                    <%= image_tag ("avatar.jpg"), class: "img-rounded" %>
+                  <% end %>
                   </div>
                   <i class="fa fa-angle-down pull-right"></i>
                   <div class="user-mini pull-right">
-                    <span class="welcome">Bievenido,</span>
-                    <span>Nombre_Usuario</span>
+                    <span class="welcome">Bienvenid@</span>
+                    <% if current_user %>
+                    <span><%= current_user.nombre %></span>
+                    <% else %>
+                    <span>Por favor ingresa</span>
+                    <% end %>
                   </div>
                 </a>
+
                 <ul class="dropdown-menu">
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-user"></i>
-                      <span>Perfil</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-power-off"></i>
-                      <span>Salir</span>
-                    </a>
-                  </li>
+                <% if current_user %>
+                  <li><%= link_to "<i class='fa fa-user'></i> Editar Perfil".html_safe, edit_user_path(current_user.id) %></li>
+                  <li><%= link_to "<i class='fa fa-sign-out'></i> Salir".html_safe, :logout, method: :get %></li>
+                 <% else %>
+                  <li><%= link_to "<i class='fa fa-plus-square'></i> Registrarse".html_safe, new_user_path %></li>
+                  <li><%= link_to "<i class='fa fa-sign-in'></i> Entrar".html_safe, :login , remote: true %></li>
+                <% end %>
                 </ul>
               </li>
             </ul>
@@ -90,6 +97,7 @@
   <div class="row">
     <div id="sidebar-l" class="col-xs-2 col-sm-2 ">
       <ul class="nav main-menu">
+<% if current_user %>
         <li class="nar">
           <a href="/telas" class=" ajax-link">
             <i class="fa fa-search"></i>
@@ -133,7 +141,7 @@
           </a>
         </li>
         <li class="ver">
-          <a href="#" class=" ajax-link">
+          <a href="/users" class=" ajax-link">
             <i class="fa fa-male"></i>
             <span class="hidden-xs">Usuarios</span>
           </a>
@@ -160,7 +168,21 @@
             <li><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-picture-o"></i> Fotos</a></li>
             <li><a role="menuitem" tabindex="-1" href="/videos"><i class="fa fa-video-camera"></i> Videos</a></li>
           </ul>
-        </li>        
+        </li>  
+<% else %>
+       <li role="presentation" class="dropdown nar" >
+          <a id="drop6" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-star"></i>
+            Extras
+            <span class="caret"></span>
+          </a>
+          <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
+            <li><a role="menuitem" tabindex="-1" href="/articulos"><i class="fa fa-pencil"></i> Articulos</a></li>
+            <%#<li><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-picture-o"></i> Fotos</a></li> %>
+            <li><a role="menuitem" tabindex="-1" href="/videos"><i class="fa fa-video-camera"></i> Videos</a></li>
+          </ul>
+        </li> 
+<% end %>      
       </ul>
       <%#
     <a href="#" class="show-sidebar cerr"><i class="fa fa-arrow-circle-left"></i><p class="p1">Cerrar Menú</p></a>

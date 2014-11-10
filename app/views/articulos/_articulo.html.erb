@@ -11,7 +11,9 @@
             </figcaption>
           </figure>
           <div class="artid">
+          <% if current_user %>
               <%= link_to 'Editar', edit_articulo_path(articulo), class: "artil", remote: true %>
               <%= link_to 'Eliminar', articulo, method: :delete, data: { confirm: 'Estas segur@?' }, class: "artil", remote: true %>
+          <% end %>
           </div>
         </li>

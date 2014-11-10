@@ -1,6 +1,6 @@
 class ArticulosController < ApplicationController
   before_action :set_articulo, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login, :except => [:index]
   # GET /articulos
   # GET /articulos.json
   def index

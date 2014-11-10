@@ -3,10 +3,12 @@
         <div class="btn-group">
           <a href="#"> </a>
           <ul class="list-inline">
+          <% if current_user %>
             <li class="link"><%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_video_path(video), remote: true %>
             <% if video.id != 1 %></li>
               <li><%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, video, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></li>
             <%end %>
+          <% end %>
           </ul>
         </div>
         <hr class="hr1"></div> <div class="ow-server">

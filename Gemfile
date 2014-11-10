@@ -52,3 +52,4 @@ gem "jquery-fileupload-rails"
 gem 'will_paginate', '~> 3.0'
 gem 'lazybox'
 gem 'remotipart'
+gem 'sorcery'

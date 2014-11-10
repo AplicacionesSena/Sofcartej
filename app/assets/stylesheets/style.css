@@ -2673,15 +2673,14 @@ border-bottom-left-radius: 20px;
 border-bottom-right-radius: 50px 100px;
 border-top-left-radius: 100px 50px;}
 #lazybox{
-border-bottom-left-radius: 20px;
-border-bottom-right-radius: 50px 50px;
-border-top-left-radius: 50px 50px;
 text-align: center;
-border: 4px double #000000;}
+background: url(ba.png) -100px -250px;
+background-size: auto;
+background-repeat: no-repeat;
+}
 #lazybox.lazybox {
 padding: 0;
 border: 0;
-background: transparent;
 width: 45%;
 box-shadow: none;
 }
@@ -2690,5 +2689,10 @@ box-shadow: none;
   overflow-y: scroll;
   overflow-x: none; 
 }
-
+.registro{
+  position: relative;
+  top: -450px;
+  width: 600px;
+  height: 400px;
+}
 
