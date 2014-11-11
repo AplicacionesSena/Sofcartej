@@ -1,3 +1,4 @@
+<% if current_user.role_id == 1 %>
 <center><h1>acabados</h1><br>
 <div class="peque">
 <table class="table table-hover table-heading">
@@ -15,5 +16,15 @@
 </div>
 <br>
 
-<%= button_to 'Nuevo Acabado', new_acabado_path , class: "btn btn-success btn-lg", :method => "get", remote: true%>
+<%= button_to 'Nuevo Acabado', new_acabado_path , class: "btn btn-success btn-lg", :method => "get", remote: true %>
 </center>
+<% else %>
+<center>
+    <div class="fadeIn derror">
+    <%= image_tag ("error.png"), class: "img-rounded", height: '40', width: '40' %>
+     <h1>Acceso denegado.</h1>
+     <small>Por favor contáctese con el administrador.</small>
+    </div>
+  </center>
+
+<% end %>

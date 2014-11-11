@@ -1,3 +1,4 @@
+<% if current_user.role_id == 1 %>
 <center><h1>Usos</h1><br>
 
 <div class="peque">
@@ -22,3 +23,12 @@
 <%= button_to 'Nuevo Uso', new_uso_path, class: "btn btn-success btn-lg", :method => "get", remote: true %>
 <% end %>
 </center>
+<% else %>
+<center>
+    <div class="fadeIn derror">
+    <%= image_tag ("error.png"), class: "img-rounded", height: '40', width: '40' %>
+     <h1>Acceso denegado.</h1>
+     <small>Por favor contáctese con el administrador.</small>
+    </div>
+  </center>
+<% end %>

@@ -27,7 +27,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.role_id %></td>
+        <td><%= mostrar(user.role_id) %></td>
         <% if user.foto_file_name == nil %>
           <td><%= image_tag ("avatar.jpg"), class: "img-rounded", height: '40', width: '40' %></td>
         <% else %>
@@ -35,8 +35,12 @@
         <% end %>
         <td><%= user.nombre %> </td>
         <td><%= user.email %></td>
-        <td><%= link_to 'Editar', edit_user_path(user) %></td>
-        <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user.role_id != 1  || user.email == current_user.email || current_user.id == 3 %>
+          <td><%= link_to 'Editar', edit_user_path(user) %></td>
+          <% if user.id != 3 %>
+          <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -44,7 +48,11 @@
 </div>
 </center>
 <% else %>
- Asceso denegado.
-
-
+  <center>
+    <div class="fadeIn derror">
+    <%= image_tag ("error.png"), class: "img-rounded", height: '40', width: '40' %>
+     <h1>Acceso denegado.</h1>
+     <small>Por favor contáctese con el administrador.</small>
+    </div>
+  </center>
 <% end %>

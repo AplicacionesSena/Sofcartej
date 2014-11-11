@@ -1,6 +1,8 @@
 <center><h1>Articulos</h1></center><br>
 <% if current_user %>
-<%= button_to 'Nuevo Articulo', new_articulo_path, class: "btn btn-success", :method => "get", remote: true %>
+	<% if current_user.role_id == 1 %>
+		<%= button_to 'Nuevo Articulo', new_articulo_path, class: "btn btn-success", :method => "get", remote: true %>
+	<% end %>
 <% end %>
 <div class="conarti">
 <ul class="grid cs-style-4">

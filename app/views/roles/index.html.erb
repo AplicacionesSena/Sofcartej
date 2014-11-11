@@ -1,3 +1,4 @@
+<% if current_user.role_id == 1 %>
 <h1>Listing roles</h1>
 
 <table>
@@ -23,3 +24,12 @@
 <br>
 
 <%= link_to 'New Role', new_role_path %>
+<% else %>
+<center>
+    <div class="fadeIn derror">
+    <%= image_tag ("error.png"), class: "img-rounded", height: '40', width: '40' %>
+     <h1>Acceso denegado.</h1>
+     <small>Por favor contáctese con el administrador.</small>
+    </div>
+  </center>
+<% end %>

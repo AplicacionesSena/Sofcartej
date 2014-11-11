@@ -1,3 +1,4 @@
+<% if current_user.role_id == 1 %>
 <center><h1>Tipos de telas</h1><br>
 <div class="peque">
 <table class="table table-hover table-heading">
@@ -17,3 +18,12 @@
 
 <%= button_to 'Nuevo tipo de tela', new_tipos_tela_path, class: "btn btn-success btn-lg", :method => "get", remote: true  %>
 </center>
+<% else %>
+<center>
+    <div class="fadeIn derror">
+    <%= image_tag ("error.png"), class: "img-rounded", height: '40', width: '40' %>
+     <h1>Acceso denegado.</h1>
+     <small>Por favor contáctese con el administrador.</small>
+    </div>
+  </center>
+<% end %>
