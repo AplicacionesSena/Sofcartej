@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
 
   def create
     if @user = login(params[:email], params[:password])
-      redirect_back_or_to(:users, notice: 'Bienvenido')
+      redirect_back_or_to(root_url)
     else
       flash.now[:alert] = 'Error al entrar, porfavor verifique sus datos'
       render action: 'new'

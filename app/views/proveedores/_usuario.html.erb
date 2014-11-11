@@ -1,0 +1,26 @@
+<div class="separag">
+  <center><h3>Proveedores</h3></center>
+  <div class="divsofg">
+  <table class="table table-hover table-heading">
+    <thead>
+      <tr>
+        <th class="cen">Nombre</th>
+        <th class="cen">Telefono</th>
+        <th class="cen">Direccion</th>
+        <th class="cen">Correo</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @proveedores.each do |proveedore| %>
+      <tr>
+        <td><%= proveedore.nombre %></td>
+        <td><%= proveedore.telefono %></td>
+        <td><%= proveedore.direccion %></td>
+        <td><%= proveedore.correo %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>

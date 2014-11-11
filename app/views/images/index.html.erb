@@ -9,6 +9,8 @@
   <a href="#"> </a>
   <ul class="list-inline">
     <li><%= button_to 'Atras', telas_path, class: "btn btn-default", :method => "get" %></li>
+    <% if current_user.role_id == 1 %>
     <li><%= button_to 'Nueva Imagen', new_tela_image_path(@tela), class: "btn btn-success", :method => "get", remote: true %> </li>  
+    <% end %>
   </ul>
 </div

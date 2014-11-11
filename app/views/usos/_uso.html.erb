@@ -1,5 +1,6 @@
 <tr>
         <td><%= uso.nombre %></td>
+        <% if current_user.role_id == 1 %>
         <td>
           <div class="btn-group">
             <a href="#"> </a>
@@ -9,4 +10,5 @@
             </ul>
           </div>  
         </td>
+        <% end %>
       </tr>

@@ -16,6 +16,7 @@
             <ul class="list-inline">
               <li><%= link_to '<button class="btn btn-default"><small>'.html_safe+tela.images.count.to_s+' Fotos →</small><i class="fa fa-picture-o neg"></i></button>'.html_safe, tela_images_path(tela) %></li>
             </ul></td>
+        <% if current_user.role_id == 1 %>
         <td>
           <div class="btn-group">
             <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
@@ -26,6 +27,6 @@
               <li> <%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, tela, method: :delete, data: { confirm: 'Estas segur@?' },remote: true %></li>
             </ul>
           </div>
-            
         </td>
+        <% end %>
       </tr>

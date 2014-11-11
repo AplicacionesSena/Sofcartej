@@ -1,0 +1,20 @@
+<div class="separa">
+  <center><h3>Usos</h3></center>
+  <div class="divsof">
+  <table class="table table-hover table-heading">
+    <thead>
+      <tr>
+        <th class="cen">Nombre de uso</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @usos.each do |uso| %>
+      <tr>
+          <td><%= uso.nombre %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>

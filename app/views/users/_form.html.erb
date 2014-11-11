@@ -1,4 +1,6 @@
+
 <%= simple_form_for(@user, :html => { :class => 'form-horizontal' } ) do |f| %>
+
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -31,7 +33,28 @@
     <label>Foto</label><br>
     <%= f.file_field :foto %>
   </div>
+<% if current_user %>
+  <% if current_user.role_id == 1 %>
+    <div class="field">
+      <label>Rol</label><br>
+      <%= f.collection_select :role_id, Role.all, :id, :rol, class: "form-control", prompt: "Seleccione el rol", :selected => @user.role_id || 2 %>
+    </div>
+  <% else %>
+    <div class="field ocultar">
+      <label>Rol</label><br>
+      <%= f.collection_select :role_id, Role.all, :id, :rol, class: "form-control", prompt: "Seleccione el rol", :selected => @user.role_id || 2 %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="field ocultar">
+      <label>Rol</label><br>
+      <%= f.collection_select :role_id, Role.all, :id, :rol, class: "form-control", prompt: "Seleccione el rol", :selected => @user.role_id || 2 %>
+    </div>
+<% end %>
+
   <div class="actions">
     <%= f.submit "Guardar" %>
   </div>
+
+
 <% end %>
