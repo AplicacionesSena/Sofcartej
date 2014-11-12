@@ -61,6 +61,10 @@
     <label>Ficha tecnica</label><br>
     <%= f.file_field :document %>
   </div>
+  <div class="field ocultar">
+    <label>Peso x Unidad</label><br>
+    <%= f.text_field :datos, :value => current_user.nombre+' el dia '+(Date.today << 1).to_formatted_s(:rfc822)  %>
+  </div>
 </div>
   <div class="actions">
     <%= f.submit "Guardar", class: "btn btn-success" %>

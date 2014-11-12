@@ -1,6 +1,6 @@
 class TelasController < ApplicationController
   before_action :set_tela, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :verify_authenticity_token
   # GET /telas
   # GET /telas.json
   def index
@@ -25,14 +25,30 @@ class TelasController < ApplicationController
   # POST /telas.json
   def create
     @tela = Tela.new(tela_params)
-    render action: :new unless @tela.save
+    respond_to do |format|
+        if @tela.save
+          format.html { redirect_to telas_path}
+          format.json { render :show, status: :created, location: @tela }
+        else
+          format.html { render :new }
+          format.json { render json: @tela.errors, status: :unprocessable_entity }
+        end
+      end
 
   end
 
   # PATCH/PUT /telas/1
   # PATCH/PUT /telas/1.json
   def update
-    render action: :edit unless @tela.update_attributes(tela_params)
+    respond_to do |format|
+        if @tela.update(tela_params)
+          format.html { redirect_to telas_path}
+          format.json { render :show, status: :ok, location: @tela }
+        else
+          format.html { render :edit }
+          format.json { render json: @tela.errors, status: :unprocessable_entity }
+        end
+      end
   end
 
   # DELETE /telas/1
@@ -49,6 +65,6 @@ class TelasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tela_params
-      params.require(:tela).permit(:nombre, :tiposTela_id, :basesTela_id, :proveedore_id, :referenciasComerciale_id, :composicion, :anchoOrillo, :uso_id, :acabado_id, :peso, :pesoUnidad, :fichaTecnica, :document)
+      params.require(:tela).permit(:nombre, :tiposTela_id, :basesTela_id, :proveedore_id, :referenciasComerciale_id, :composicion, :anchoOrillo, :uso_id, :acabado_id, :peso, :pesoUnidad, :fichaTecnica, :document, :datos)
     end
 end
