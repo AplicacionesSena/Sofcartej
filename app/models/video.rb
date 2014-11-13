@@ -1,4 +1,6 @@
 class Video < ActiveRecord::Base
+	validates :vid, presence: true
+	validates :titulo, presence: true
   has_attached_file :vid
   do_not_validate_attachment_file_type :vid
 

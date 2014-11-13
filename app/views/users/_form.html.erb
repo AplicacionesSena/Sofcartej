@@ -1,9 +1,9 @@
 
 <%= simple_form_for(@user, :html => { :class => 'form-horizontal' } ) do |f| %>
-
+<div class="merror">
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@user.errors.count, "Errore") %> encontrados</h2>
 
       <ul>
       <% @user.errors.full_messages.each do |message| %>
@@ -12,6 +12,7 @@
       </ul>
     </div>
   <% end %>
+</div>
 
   <div class="field">
        <%= f.label :nombre %><br />

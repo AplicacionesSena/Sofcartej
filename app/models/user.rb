@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
     validates :password_confirmation, presence: true
     validates :nombre, presence: true
     validates :email, uniqueness: true
+    validates :email, presence: true
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    validates :email, format: { :with => VALID_EMAIL_REGEX , message: "El formato del correo es invalido" }
     validates :nombre, length: { in: 4..15 }
 
     has_attached_file :foto, :default_url => "/users"

@@ -1,5 +1,16 @@
 class Tela < ActiveRecord::Base
   # attr_accessible :nombre, :tiposTela, :basesTela, :proveedore, :referenciasComerciale, :composicion, :anchoOrillo, :uso, :acabado, :peso, :pesoUnidad, :fichaTecnica, :document
+  validates :nombre, presence: true
+  validates :tiposTela, presence: true
+  validates :basesTela, presence: true
+  validates :proveedore, presence: true
+  validates :referenciasComerciale, presence: true
+  validates :composicion, presence: true
+  validates :anchoOrillo, presence: true
+  validates :uso, presence: true
+  validates :acabado, presence: true
+  validates :peso, presence: true
+  validates :pesoUnidad, presence: true
 
   belongs_to :tiposTela
   belongs_to :basesTela

@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
   before_filter :require_login, :except => [:index]
   # GET /videos
   # GET /videos.json
@@ -25,14 +26,30 @@ class VideosController < ApplicationController
   # POST /videos.json
   def create
     @video = Video.new(video_params)
-  render action: :new unless @video.save
+  respond_to do |format|
+        if @video.save
+          format.html { redirect_to videos_path}
+          format.json { render :show, status: :created, location: @video }
+        else
+          format.html { render :new }
+          format.json { render json: @video.errors, status: :unprocessable_entity }
+        end
+      end
 
   end
 
   # PATCH/PUT /videos/1
   # PATCH/PUT /videos/1.json
   def update
-    render action: :edit unless @video.update_attributes(video_params)
+    respond_to do |format|
+        if @video.update(video_params)
+          format.html { redirect_to videos_path}
+          format.json { render :show, status: :ok, location: @video }
+        else
+          format.html { render :edit }
+          format.json { render json: @video.errors, status: :unprocessable_entity }
+        end
+      end
   end
 
   # DELETE /videos/1
