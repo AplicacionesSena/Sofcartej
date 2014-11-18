@@ -265,7 +265,7 @@
         mouseWheel: false,          // Set "true" if you want the carousel scrolled using mouse wheel
         auto: null,                 // Set to a numeric value (800) in millis. Time period between auto scrolls
 
-        speed: 100,                 // Set to a numeric value in millis. Speed of scroll
+        speed: 5,                 // Set to a numeric value in millis. Speed of scroll
         easing: null,               // Set to easing (bounceout) to specify the animation easing
 
         vertical: false,            // Set to "true" to make the carousel scroll vertically
