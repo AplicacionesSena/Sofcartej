@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   get 'sofcartej/sofcartej'
 
+  get 'sofcartej/contacto'
+
   resources :tipos_telas
 
   resources :usos

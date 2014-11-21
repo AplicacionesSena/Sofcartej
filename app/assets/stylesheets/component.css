@@ -180,3 +180,95 @@ border: 1px solid red;
 		opacity: 1;	
 	}		
 }
+
+#contac{
+	margin-top: 50px;
+	width: 700px;
+	height: 294px;
+	border:1px solid #ccc;
+	padding: 5px;
+	background-color: white;
+	border-radius: 3px;
+}
+.contachr{
+	color: #4E4E4E;
+	margin-top: -5px;
+	margin-bottom: 5px;
+}
+#contac ul{
+	list-style: none;
+}
+.lc1{
+	position: relative;
+	left: -200px;
+	background-image: url(sele.png);
+	width: 320px;
+	height: 80px;
+	color: #EBEBEB;
+	margin-top: 0px;
+	opacity: 0.9;
+}
+.lc1:hover{
+	opacity: 1;
+}
+.cprimero{ 
+	display:none;
+	float: right;
+	border: 1px solid #f0f0f0;
+	margin: 0px;
+	width: 400px;
+	height: 242px;
+	margin-top: -81px;
+	background: url(contacto.png) no-repeat;
+	 
+} 
+#cprimero:hover .cprimero { 
+	display:block; 
+} 
+
+.csegundo{ 
+	display:none;
+	float: right;
+	border: 1px solid #f0f0f0;
+	margin: 0px;
+	width: 400px;
+	height: 242px;
+	margin-top: -161px;
+	background: url(contacto.png) no-repeat;
+	 
+} 
+#csegundo:hover .csegundo { 
+	display:block; 
+} 
+
+.ctercero{ 
+	display:none;
+	float: right;
+	border: 1px solid #f0f0f0;
+	margin: 0px;
+	width: 400px;
+	height: 242px;
+	margin-top: -241px;
+	background: url(contacto.png) no-repeat;
+	 
+} 
+#ctercero:hover .ctercero { 
+	display:block; 
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

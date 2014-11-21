@@ -13,4 +13,9 @@ before_filter :require_login, :except => [:inicio]
   	@referencias_comerciales = ReferenciasComerciale.all
   	@proveedores = Proveedore.all
   end
+
+  def contacto
+    
+  end
+
 end
