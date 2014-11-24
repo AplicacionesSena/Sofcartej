@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20141111131321) do
     t.string   "document_content_type"
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
+    t.string   "datos",                    limit: nil
   end
 
   create_table "tipos_telas", force: true do |t|
@@ -117,6 +118,7 @@ ActiveRecord::Schema.define(version: 20141111131321) do
     t.string   "foto_content_type"
     t.integer  "foto_file_size"
     t.datetime "foto_updated_at"
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
