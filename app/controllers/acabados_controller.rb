@@ -7,6 +7,11 @@ class AcabadosController < ApplicationController
     @acabados = Acabado.all
   end
 
+  def import
+    Acabado.import(params[:file])
+    redirect_to controller: "sofcartej", action: "importar"
+  end
+
   # GET /acabados/1
   # GET /acabados/1.json
   def show

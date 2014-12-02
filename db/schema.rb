@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111131321) do
+ActiveRecord::Schema.define(version: 20141201162453) do
 
   create_table "acabados", force: true do |t|
     t.string   "nombre"
@@ -58,11 +58,26 @@ ActiveRecord::Schema.define(version: 20141111131321) do
 
   add_index "images", ["tela_id"], name: "index_images_on_tela_id"
 
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.date     "releasedOn"
+    t.string   "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "proveedores", force: true do |t|
     t.string   "nombre"
     t.string   "telefono"
     t.string   "direccion"
     t.string   "correo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pruebas", force: true do |t|
+    t.string   "nombre"
+    t.string   "apellido"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

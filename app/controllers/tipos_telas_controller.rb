@@ -7,6 +7,12 @@ class TiposTelasController < ApplicationController
     @tipos_telas = TiposTela.all
   end
 
+
+  def import
+    TiposTela.import(params[:file])
+    redirect_to controller: "sofcartej", action: "importar"
+  end
+
   # GET /tipos_telas/1
   # GET /tipos_telas/1.json
   def show
