@@ -7,6 +7,10 @@ class TelasController < ApplicationController
     @telas = Tela.search(params[:search], params[:page])
   end
 
+  def import
+    Tela.import(params[:file])
+    redirect_to controller: "sofcartej", action: "importar"
+  end
   # GET /telas/1
   # GET /telas/1.json
   def show

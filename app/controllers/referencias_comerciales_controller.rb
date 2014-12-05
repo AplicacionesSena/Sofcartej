@@ -7,6 +7,10 @@ class ReferenciasComercialesController < ApplicationController
     @referencias_comerciales = ReferenciasComerciale.all
   end
 
+  def import
+    ReferenciasComerciale.import(params[:file])
+    redirect_to controller: "sofcartej", action: "importar"
+  end
   # GET /referencias_comerciales/1
   # GET /referencias_comerciales/1.json
   def show

@@ -28,5 +28,14 @@ def self.search(search, page)
     "%#{search}%".upcase]).paginate(page: page, per_page: 5).order("nombre")
 end
 
+  def self.import(file)
+      accessible_attributes = ["id", "nombre", "tiposTela_id", "basesTela_id", "proveedore_id", "referenciasComerciale_id", "composicion", "anchoOrillo", "uso_id", "acabado_id", "peso", "pesoUnidad", "datos"]
+      ::CSV.foreach(file.path, headers: true) do |row|
+        telas = find_by_id(row["id"]) || new
+        telas.attributes = row.to_hash.slice(*accessible_attributes)
+        telas.save! if telas.id != row["id"] && row["id"] != nil
+      end
+  end
+
 
 end

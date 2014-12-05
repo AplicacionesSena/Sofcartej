@@ -6,8 +6,7 @@ class TiposTelasController < ApplicationController
   def index
     @tipos_telas = TiposTela.all
   end
-
-
+  
   def import
     TiposTela.import(params[:file])
     redirect_to controller: "sofcartej", action: "importar"
@@ -26,7 +25,7 @@ class TiposTelasController < ApplicationController
   # GET /tipos_telas/1/edit
   def edit
   end
-
+  #TiposTela.import(params[:file])
   # POST /tipos_telas
   # POST /tipos_telas.json
   def create

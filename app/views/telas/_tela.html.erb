@@ -11,7 +11,7 @@
             <ul class="list-inline">
               <li><%= link_to '<button class="btn btn-default"><small>'.html_safe+tela.images.count.to_s+' Fotos →</small><i class="fa fa-picture-o neg"></i></button>'.html_safe, tela_images_path(tela) %></li>
             </ul></td>
-        <% if current_user.role_id == 1 %>
+        <% if current_user.role_id == 1 %> 
         <td>
           <div class="btn-group">
             <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
@@ -23,6 +23,11 @@
             </ul>
           </div>
         </td>
+        <% else %>
+          <td><a href="#"> </a>
+            <ul class="list-inline">
+              <li><%= link_to '<button class="btn btn-default"><small> Info </small><i class="fa fa-eye"></i></button>'.html_safe, tela, remote: true %></li>
+            </ul></td>
         <% end %>
         
       </tr> 

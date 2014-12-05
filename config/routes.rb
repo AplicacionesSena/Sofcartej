@@ -4,7 +4,31 @@ Rails.application.routes.draw do
     collection { post :import }
   end
 
-   resources :acabados do
+  resources :acabados do
+    collection { post :import }
+  end
+
+  resources :clasificaciones do
+    collection { post :import }
+  end
+
+  resources :bases_telas do
+    collection { post :import }
+  end
+
+  resources :proveedores do
+    collection { post :import }
+  end
+
+  resources :referencias_comerciales do
+    collection { post :import }
+  end
+
+  resources :usos do
+    collection { post :import }
+  end
+
+  resources :telas do
     collection { post :import }
   end
 

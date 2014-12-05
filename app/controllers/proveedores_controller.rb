@@ -7,6 +7,10 @@ class ProveedoresController < ApplicationController
     @proveedores = Proveedore.all
   end
 
+  def import
+    Proveedore.import(params[:file])
+    redirect_to controller: "sofcartej", action: "importar"
+  end
   # GET /proveedores/1
   # GET /proveedores/1.json
   def show
