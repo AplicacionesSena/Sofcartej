@@ -6,6 +6,11 @@ class TiposTelasController < ApplicationController
   def index
     @tipos_telas = TiposTela.all
   end
+  
+  def import
+    TiposTela.import(params[:file])
+    redirect_to controller: "sofcartej", action: "importar"
+  end
 
   # GET /tipos_telas/1
   # GET /tipos_telas/1.json
@@ -20,45 +25,25 @@ class TiposTelasController < ApplicationController
   # GET /tipos_telas/1/edit
   def edit
   end
-
+  #TiposTela.import(params[:file])
   # POST /tipos_telas
   # POST /tipos_telas.json
   def create
     @tipos_tela = TiposTela.new(tipos_tela_params)
+   render action: :new unless @tipos_tela.save
 
-    respond_to do |format|
-      if @tipos_tela.save
-        format.html { redirect_to @tipos_tela, notice: 'Tipos tela was successfully created.' }
-        format.json { render :show, status: :created, location: @tipos_tela }
-      else
-        format.html { render :new }
-        format.json { render json: @tipos_tela.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /tipos_telas/1
   # PATCH/PUT /tipos_telas/1.json
   def update
-    respond_to do |format|
-      if @tipos_tela.update(tipos_tela_params)
-        format.html { redirect_to @tipos_tela, notice: 'Tipos tela was successfully updated.' }
-        format.json { render :show, status: :ok, location: @tipos_tela }
-      else
-        format.html { render :edit }
-        format.json { render json: @tipos_tela.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @tipos_tela.update_attributes(tipos_tela_params)
   end
 
   # DELETE /tipos_telas/1
   # DELETE /tipos_telas/1.json
   def destroy
     @tipos_tela.destroy
-    respond_to do |format|
-      format.html { redirect_to tipos_telas_url, notice: 'Tipos tela was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private

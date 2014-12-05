@@ -4,7 +4,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
+
 gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,3 +48,10 @@ group :development do
 	gem 'quiet_assets'
 	gem 'rails_layout'
 end
+gem "simple_form"
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "jquery-fileupload-rails"
+gem 'will_paginate', '~> 3.0'
+gem 'lazybox'
+gem 'remotipart'
+gem 'sorcery'

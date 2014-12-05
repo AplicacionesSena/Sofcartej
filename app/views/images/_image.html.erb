@@ -1,0 +1,17 @@
+<div class="coni">
+     <div class="conit">
+     
+        <div class="btn-group">
+        <% if current_user.role_id == 1 %>
+          <a href="#"> </a>
+          <ul class="list-inline">
+           <li class="link"><%= link_to '<i class="fa fa-wrench txt-primary"></i><span> Editar</span>'.html_safe, edit_tela_image_path(@tela,image), remote: true %></li>
+           <li><%= link_to '<i class="fa fa-times txt-danger"></i><span> Eliminar</span>'.html_safe, tela_image_path(@tela,image), method: :delete, data: { confirm: 'Estas segur@?' }, remote: true %></li>
+          </ul>
+          <% end %>
+        </div>
+        
+       <hr class="hr1"></div> <div class="ow-server">
+       <%=link_to image_tag(image.imagen.url, height: '250', width: '250'), tela_image_path(@tela,image), remote: true %>
+      </div>
+      </div>

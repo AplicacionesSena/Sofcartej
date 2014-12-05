@@ -1,4 +1,76 @@
 Rails.application.routes.draw do
+# _-------para importar--------------_
+  resources :tipos_telas do
+    collection { post :import }
+  end
+
+  resources :acabados do
+    collection { post :import }
+  end
+
+  resources :clasificaciones do
+    collection { post :import }
+  end
+
+  resources :bases_telas do
+    collection { post :import }
+  end
+
+  resources :proveedores do
+    collection { post :import }
+  end
+
+  resources :referencias_comerciales do
+    collection { post :import }
+  end
+
+  resources :usos do
+    collection { post :import }
+  end
+
+  resources :telas do
+    collection { post :import }
+  end
+
+#_------------------------------------_
+  resources :roles
+
+  resources :user_sessions
+  resources :users
+
+  get 'login' => 'user_sessions#new', :as => :login
+  get 'logout' => 'user_sessions#destroy', :as => :logout
+
+  resources :articulos
+
+  resources :videos
+
+  resources :images
+
+  resources :telas
+
+  resources :telas do
+    resources :images
+  end
+
+  resources :bases_telas
+
+  resources :referencias_comerciales
+
+  resources :acabados
+
+  resources :proveedores
+
+  resources :clasificaciones
+
+  get 'sofcartej/inicio'
+
+  get 'sofcartej/sofcartej'
+
+  get 'sofcartej/contacto'
+
+  get 'sofcartej/importar'
+
   resources :tipos_telas
 
   resources :usos
@@ -7,7 +79,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'usos#index'
+  root 'sofcartej#inicio'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

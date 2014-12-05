@@ -1,0 +1,16 @@
+<div>	
+
+	<p>
+	  <%= image_tag @image.imagen.url, height: '300', width: '450' %>
+	</p>
+	<% c = 0 %>
+	<% @images.each do |i|%>
+		
+	
+		<%= link_to c+=1, tela_image_path(@tela,i), remote: true %>
+	<%
+	end 
+	%>
+	
+	
+</div>

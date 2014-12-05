@@ -1,0 +1,32 @@
+<% if current_user.role_id == 1 %>
+<center><h1>Lista de proveedores</h1><br>
+<div class="cen media">
+<table class="table table-hover table-heading">
+  <thead>
+    <tr>
+      <th class="cen">Nombre</th>
+      <th class="cen">Telefono</th>
+      <th class="cen">Direccion</th>
+      <th class="cen">Correo</th>
+      <th class="cen" colspan="3">Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @proveedores %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= button_to 'Nuevo proveedor', new_proveedore_path, class: "btn btn-success btn-lg", :method => "get", remote: true  %>
+</center>
+<% else %>
+<center>
+    <div class="fadeIn derror">
+    <%= image_tag ("error.png"), class: "img-rounded", height: '40', width: '40' %>
+     <h1>Acceso denegado.</h1>
+     <small>Por favor contáctese con el administrador.</small>
+    </div>
+  </center>
+<% end %>

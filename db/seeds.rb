@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#acabados= [{nombre: "rustico"}]
+#acabados.each do |a|
+#	Acabado.create(a) unless Acabado.exists?(a)
+#end

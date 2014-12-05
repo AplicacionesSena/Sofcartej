@@ -1,0 +1,21 @@
+<li>
+          <h3><%= articulo.titulo %></h3>
+          <figure>
+
+            <div><%= image_tag('5.png')%></div>
+            <figcaption>
+              <div class="artii">
+              <%= link_to image_tag('lupa.png', :size => "100x100"), articulo.arti.url %>
+              </div>
+              
+            </figcaption>
+          </figure>
+          <div class="artid">
+          <% if current_user %>
+            <% if current_user.role_id == 1 %>
+              <%= link_to 'Editar', edit_articulo_path(articulo), class: "artil", remote: true %>
+              <%= link_to 'Eliminar', articulo, method: :delete, data: { confirm: 'Estas segur@?' }, class: "artil", remote: true %>
+            <% end %>
+          <% end %>
+          </div>
+        </li>

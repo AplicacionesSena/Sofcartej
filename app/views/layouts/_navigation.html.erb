@@ -4,85 +4,84 @@
     <meta charset="utf-8">
     <title>Sofcartej</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   </head>
-<body>
+<body >
 
 <header class="navbar">
   <div class="container-fluid expanded-panel">
     <div class="row">
-      <div id="log" class="col-xs-12 col-sm-2">
-        <a href="#">Sofcartej</a>
+      <div id="log" class="col-xs-12 col-sm-2" >
+        <a href="/sofcartej/inicio" class="pulse" >Sofcartej</a>
       </div>
       <div id="top-panel" class="col-xs-12 col-sm-10">
         <div class="row">
           <div class="col-xs-8 col-sm-4">
-            <a href="#" class="show-sidebar"> 
-               <i class="fa fa-bars"></i>
+            <a href="#" class="show-sidebar">
+              <strong>Menú</strong>
+              <span class="meni">←→</span>
             </a>
           </div>
-    <div id="carousel-example-generic" class="carousel slide ban" data-ride="carousel">
-
-       
-        <div class="carousel-inner bano">
-            <div class="item active bami">
-                
-              <%= image_tag ("1.jpg"), class: "img-thumbnail" ,  height: '150', width: '800'%>
-            </div>
-            <div class="item bami">
-               <%= image_tag ("2.jpg"), class: "img-thumbnail" ,  height: '150', width: '800'%>
-                 
-            </div>
-            <div class="item bami">
-               <%= image_tag ("3.jpg"), class: "img-thumbnail",  height: '150', width: '800' %>
-                 
-            </div>
-            <div class="item bami">
-               <%= image_tag ("4.png"), class: "img-thumbnail",  height: '150', width: '800' %>
-                 <div class="carousel-caption"></div>
-            </div>
+      <div class="cim">
+       <div id="jcl-demo">
+          <div class="custom-container auto">
+              <div class="carousel">
+                  <ul>
+                      <li><%= image_tag ("1.JPG"), class: "img-rounded" %></li>
+                      <li><%= image_tag ("2.JPG"), class: "img-rounded" %></li>
+                      <li><%= image_tag ("3.JPG"), class: "img-rounded" %></li>
+                      <li><%= image_tag ("4.JPG"), class: "img-rounded" %></li>
+                      <li><%= image_tag ("5.jpg"), class: "img-rounded" %></li>
+                      <li><%= image_tag ("6.jpg"), class: "img-rounded" %></li>
+                      <li><%= image_tag ("7.jpg"), class: "img-rounded" %></li>
+                      <li><%= image_tag ("8.JPG"), class: "img-rounded" %></li>
+                  </ul>
+              </div>
+          </div>
         </div>
-        <a class="izq  " data-slide="prev" href="#carousel-example-generic" data-toggle="tooltip" data-placement="top" title="Anterior"><i class="fa fa-arrow-left"></i></a>
-        <a class="der  " data-slide="next" href="#carousel-example-generic" data-toggle="tooltip" data-placement="top" title="Siguiente"><i class="fa fa-arrow-right"></i></a>
-
-      </div>    
-    </div>  
+      </div>
+          <script type="text/javascript">
+              $(function() {
+                  $(".auto .carousel").jCarouselLite({
+                      auto: 2000,
+                      speed: 2000
+                  });
+              });
+          </script>
           <div class="col-xs-4 col-sm-8 top-panel-right">
             <ul class="nav navbar-nav pull-right panel-menu">
             
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
                   <div class="avatar">
-                  <%= image_tag ("avatar.jpg"), class: "img-rounded" %>
-                   
+                  <% if current_user %>
+                    <% if current_user.foto_file_name == nil %>
+                      <%= image_tag ("avatar.jpg"), class: "img-rounded" %>
+                    <% else %>
+                      <%= image_tag (current_user.foto.url), class: "img-rounded" %>
+                    <% end %>
+                  <% else %>
+                    <%= image_tag ("avatar.jpg"), class: "img-rounded" %>
+                  <% end %>
                   </div>
                   <i class="fa fa-angle-down pull-right"></i>
                   <div class="user-mini pull-right">
-                    <span class="welcome">Bievenido,</span>
-                    <span>Nombre_Usuario</span>
+                    <span class="welcome">Bienvenid@</span>
+                    <% if current_user %>
+                    <span><%= current_user.nombre %></span>
+                    <% else %>
+                    <span>Por favor ingresa</span>
+                    <% end %>
                   </div>
                 </a>
+
                 <ul class="dropdown-menu">
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-user"></i>
-                      <span>Perfil</span>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-cog"></i>
-                      <span>Opciones</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-power-off"></i>
-                      <span>Salir</span>
-                    </a>
-                  </li>
+                <% if current_user %>
+                  <li><%= link_to "<i class='fa fa-user'></i> Editar Perfil".html_safe, edit_user_path(current_user.id) %></li>
+                  <li><%= link_to "<i class='fa fa-sign-out'></i> Salir".html_safe, :logout, method: :get %></li>
+                 <% else %>
+                  <li><%= link_to "<i class='fa fa-plus-square'></i> Registrarse".html_safe, new_user_path %></li>
+                  <li><%= link_to "<i class='fa fa-sign-in'></i> Entrar".html_safe, :login , remote: true %></li>
+                <% end %>
                 </ul>
               </li>
             </ul>
@@ -96,16 +95,18 @@
 <!--Menu-->
 <div id="main" class="container-fluid">
   <div class="row">
-    <div id="sidebar-l" class="col-xs-2 col-sm-2">
+    <div id="sidebar-l" class="col-xs-2 col-sm-2 ">
       <ul class="nav main-menu">
+<% if current_user %>
         <li class="nar">
-          <a href="/tipos_telas" class=" ajax-link">
+          <a href="/telas" class=" ajax-link">
             <i class="fa fa-search"></i>
             <span class="hidden-xs">Características</span>
           </a>
         </li>
+  <% if current_user.role_id == 1 %>
         <li class="ver">
-          <a href="#" class=" ajax-link">
+          <a href="/clasificaciones" class=" ajax-link">
             <i class="fa fa-th-list"></i>
             <span class="hidden-xs">Clasificaciones</span>
           </a>
@@ -117,42 +118,98 @@
           </a>
         </li>
         <li class="ver">
-          <a href="#" class=" ajax-link">
+          <a href="/acabados" class=" ajax-link">
             <i class="fa fa-mail-forward"></i>
             <span class="hidden-xs">Acabados</span>
           </a>
         </li>
         <li class="nar">
-          <a href="#" class=" ajax-link">
+          <a href="/bases_telas" class=" ajax-link">
             <i class="fa fa-edit"></i>
             <span class="hidden-xs">Bases</span>
           </a>
         </li>
         <li class="ver">
-          <a href="#" class=" ajax-link">
+          <a href="/referencias_comerciales" class=" ajax-link">
             <i class="fa fa-globe"></i>
-            <span class="hidden-xs">Referencias</span>
+            <span class="hidden-xs">Referencias comerciales</span>
           </a>
         </li>
         <li class="nar">
-          <a href="#" class=" ajax-link">
+          <a href="/proveedores" class=" ajax-link">
             <i class="fa fa-group"></i>
             <span class="hidden-xs">Proveedores</span>
           </a>
         </li>
+  
         <li class="ver">
-          <a href="#" class=" ajax-link">
+          <a href="/users" class=" ajax-link">
             <i class="fa fa-male"></i>
             <span class="hidden-xs">Usuarios</span>
           </a>
         </li>
         <li class="nar">
-          <a href="#" class=" ajax-link">
-            <i class="fa fa-star"></i>
-            <span class="hidden-xs">Extras</span>
+          <a href="/tipos_telas" class=" ajax-link">
+            <i class="fa fa-gear"></i>
+            <span class="hidden-xs">Tipos de telas</span>
           </a>
         </li>
-         
+        <li role="presentation" class="dropdown ver" >
+          <a id="drop6" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-star"></i>
+            Extras
+            <span class="caret"></span>
+          </a>
+          <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
+            <li><a role="menuitem" tabindex="-1" href="/articulos"><i class="fa fa-pencil"></i> Articulos</a></li>
+            <li><a role="menuitem" tabindex="-1" href="/videos"><i class="fa fa-video-camera"></i> Videos</a></li>
+          </ul>
+        </li>
+        <li role="presentation" class="dropdown nar" >
+          <a id="drop6" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-exclamation-circle"></i>
+            Opciones 
+            <span class="caret"></span>
+          </a>
+          <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
+            <li><a role="menuitem" tabindex="-1" href="/sofcartej/importar"><i class="fa fa-share"></i> Realizar carga de datos</a></li>
+            <li><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-eraser"></i> Borrar todos los datos</a></li>
+          </ul>
+        </li>
+  <% else %>
+    <li class="ver">
+          <a href="/sofcartej/sofcartej" class=" ajax-link">
+            <i class="fa fa-th-large"></i>
+            <span class="hidden-xs">Más</span>
+          </a>
+        </li>
+        <li role="presentation" class="dropdown nar" >
+          <a id="drop6" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-star"></i>
+            Extras
+            <span class="caret"></span>
+          </a>
+          <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
+            <li><a role="menuitem" tabindex="-1" href="/articulos"><i class="fa fa-pencil"></i> Articulos</a></li>
+            <li><a role="menuitem" tabindex="-1" href="/videos"><i class="fa fa-video-camera"></i> Videos</a></li>
+          </ul>
+        </li>
+  <% end %>
+
+<% else %>
+       <li role="presentation" class="dropdown nar" >
+          <a id="drop6" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-star"></i>
+            Extras
+            <span class="caret"></span>
+          </a>
+          <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
+            <li><a role="menuitem" tabindex="-1" href="/articulos"><i class="fa fa-pencil"></i> Articulos</a></li>
+            <%#<li><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-picture-o"></i> Fotos</a></li> %>
+            <li><a role="menuitem" tabindex="-1" href="/videos"><i class="fa fa-video-camera"></i> Videos</a></li>
+          </ul>
+        </li> 
+<% end %>      
       </ul>
       <%#
     <a href="#" class="show-sidebar cerr"><i class="fa fa-arrow-circle-left"></i><p class="p1">Cerrar Menú</p></a>
@@ -169,32 +226,50 @@
     </div>
 
     %>
+  
     </div><%#
     <a href="#" class="show-sidebar abr"><i class="fa fa-arrow-circle-right"></i></a>%>
     <!--Contenido-->
   <div id="content" class="col-xs-12 col-sm-10">
       
     
-    <div class="contenido">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+    <div class="contenido" >
+       
+       <%= yield  %>
 
        
     </div>
   </div>
 </div>
+<!-- FOOTER -->
 <div id="foo" class="">
-      <ol class="breadcrumb">
-        <li><a href="#">Link1</a></li>
-        <li><a href="#">Link2</a></li>
-        <li><a href="#">Link3</a></li>
-      </ol>
-    </div>
+     <footer class="txt-default">
+      <a href="/sofcartej/contacto" class="blanca">Contacto</a> | 
+      <a href="#" class="blanca">SENA</a>
+      <br><small>Sofcartej Centro de Diseño Confección y Moda SENA 2014</small>
+    </footer>
+</div>
+
+
 <!--Jquery-->
 <script src="plugins/jquery/jquery-2.1.0.min.js"></script>
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <script src="plugins/bootstrap/bootstrap.min.js"></script>
 <script src="js/devoops.js"></script>
+<script type="text/javascript">
+ //location.reload(true);
+// window.location.reload()
 
+(function(){
+  if( window.localStorage ){
+    if( !localStorage.getItem( 'firstLoad' ) ){
+      localStorage[ 'firstLoad' ] = true;
+      window.location.reload();
+    }else
+      localStorage.removeItem( 'firstLoad' );
+  }
+})();
+
+</script>
 </body>
 </html>

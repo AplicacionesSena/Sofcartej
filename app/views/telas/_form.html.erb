@@ -1,0 +1,71 @@
+<%= simple_form_for(@tela, :html => { :class => 'form-horizontal', remote: true } ) do |f| %>
+  <% if @tela.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tela.errors.count, "error") %> prohibited this tela from being saved:</h2>
+
+      <ul>
+      <% @tela.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form1">
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <label>Tipo de tela</label><br>
+    <%= f.collection_select :tiposTela_id, TiposTela.all, :id, :nombre, class: "form-control", prompt: "Seleccione tipo de tela" %>
+  </div>
+  <div class="field">
+    <label>Base</label><br>
+    <%= f.collection_select :basesTela_id, BasesTela.all, :id, :nombre, class: "form-control", prompt: "Seleccione base" %>
+  </div>
+  <div class="field">
+    <label>Proveedor</label><br>
+    <%= f.collection_select :proveedore_id, Proveedore.all, :id, :nombre, class: "form-control", prompt: "Seleccione proveedor" %>
+  </div>
+  <div class="field">
+    <label>Referencia Comercial</label><br>
+    <%= f.collection_select :referenciasComerciale_id, ReferenciasComerciale.all, :id, :nombre, class: "form-control", prompt: "Seleccione Referencia comercial" %>
+  </div>
+  <div class="field">
+    <label>Composición</label><br>
+    <%= f.text_field :composicion %>
+  </div>
+</div>
+<div class="form2">
+  <div class="field">
+    <label>Ancho de orillo</label><br>
+    <%= f.text_field :anchoOrillo %>
+  </div>
+  <div class="field">
+    <label>Uso</label><br>
+    <%= f.collection_select :uso_id, Uso.all, :id, :nombre, class: "form-control", prompt: "Seleccione uso" %>
+  </div>
+  <div class="field">
+    <label>Acabado</label><br>
+    <%= f.collection_select :acabado_id, Acabado.all, :id, :nombre, class: "form-control", prompt: "Seleccione acabado" %>
+  </div>
+  <div class="field">
+    <%= f.label :peso %><br>
+    <%= f.text_field :peso %>
+  </div>
+  <div class="field">
+    <label>Peso x Unidad</label><br>
+    <%= f.text_field :pesoUnidad %>
+  </div>
+  <div class="field">
+    <label>Ficha tecnica</label><br>
+    <%= f.file_field :document %>
+  </div>
+  <div class="field ocultar">
+    <%= f.text_field :datos, :value => current_user.nombre+' el dia '+(Date.today).to_formatted_s(:rfc822)  %>
+  </div>
+</div>
+  <div class="actions">
+    <%= f.submit "Guardar", class: "btn btn-success" %>
+  </div>
+<% end %>

@@ -1,25 +1,29 @@
-<h1>Listing tipos_telas</h1>
-
-<table>
+<% if current_user.role_id == 1 %>
+<center><h1>Tipos de telas</h1><br>
+<div class="peque">
+<table class="table table-hover table-heading">
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th colspan="3"></th>
+      <th class="cen">Nombre</th>
+      <th class="cen" colspan="3">Opciones</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @tipos_telas.each do |tipos_tela| %>
-      <tr>
-        <td><%= tipos_tela.nombre %></td>
-        <td><%= link_to 'Show', tipos_tela %></td>
-        <td><%= link_to 'Edit', edit_tipos_tela_path(tipos_tela) %></td>
-        <td><%= link_to 'Destroy', tipos_tela, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @tipos_telas %>
   </tbody>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'New Tipos tela', new_tipos_tela_path %>
+<%= button_to 'Nuevo tipo de tela', new_tipos_tela_path, class: "btn btn-success btn-lg", :method => "get", remote: true  %>
+</center>
+<% else %>
+<center>
+    <div class="fadeIn derror">
+    <%= image_tag ("error.png"), class: "img-rounded", height: '40', width: '40' %>
+     <h1>Acceso denegado.</h1>
+     <small>Por favor contáctese con el administrador.</small>
+    </div>
+  </center>
+<% end %>

@@ -1,0 +1,22 @@
+<div class="separa">
+  <center><h3>Clasificaciones</h3></center>
+  <div class="divsof">
+  <table class="table table-hover table-heading">
+    <thead>
+      <tr>
+        <th class="cen">Nombre</th>
+        <th class="cen">Descripción</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @clasificaciones.each do |clasificacione| %>
+      <tr>
+          <td><%= clasificacione.nombre %></td>
+          <td><%= clasificacione.descripcion %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>

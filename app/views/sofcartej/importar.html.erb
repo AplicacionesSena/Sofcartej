@@ -1,0 +1,99 @@
+<%= render 'layouts/messages' %>
+<strong class="txt-danger">Nota:</strong><p>Para hacer una buena importación de los datos, por favor hacerlo en en orden indicado. El archivo debe estar en formato csv.</p>
+<div class="impodiv">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">1. Tipos de telas</h3>
+	  </div>
+	  <div class="panel-body">
+	    <%= form_tag import_tipos_telas_path, multipart: true do %>
+		  <div class="impobo"><%= file_field_tag :file %></div>
+		  <%= submit_tag "Importar", class: "btn btn-default" %>
+		<% end %>
+	  </div>
+	</div>
+
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">2. Acabados</h3>
+	  </div>
+	  <div class="panel-body">
+	    <%= form_tag import_acabados_path, multipart: true do %>
+		  <div class="impobo"><%= file_field_tag :file %></div>
+		  <%= submit_tag "Importar", class: "btn btn-default" %>
+		<% end %>
+	  </div>
+	</div>
+
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">3. Clasificaciones</h3>
+	  </div>
+	  <div class="panel-body">
+	    <%= form_tag import_clasificaciones_path, multipart: true do %>
+		  <div class="impobo"><%= file_field_tag :file %></div>
+		  <%= submit_tag "Importar", class: "btn btn-default" %>
+		<% end %>
+	  </div>
+	</div>
+
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">4. Bases de telas</h3>
+	  </div>
+	  <div class="panel-body">
+	    <%= form_tag import_bases_telas_path, multipart: true do %>
+		  <div class="impobo"><%= file_field_tag :file %></div>
+		  <%= submit_tag "Importar", class: "btn btn-default" %>
+		<% end %>
+	  </div>
+	</div>
+
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">5. Proveedores</h3>
+	  </div>
+	  <div class="panel-body">
+	    <%= form_tag import_proveedores_path, multipart: true do %>
+		  <div class="impobo"><%= file_field_tag :file %></div>
+		  <%= submit_tag "Importar", class: "btn btn-default" %>
+		<% end %>
+	  </div>
+	</div>
+
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">6. Referencias Comerciales</h3>
+	  </div>
+	  <div class="panel-body">
+	    <%= form_tag import_referencias_comerciales_path, multipart: true do %>
+		  <div class="impobo"><%= file_field_tag :file %></div>
+		  <%= submit_tag "Importar", class: "btn btn-default" %>
+		<% end %>
+	  </div>
+	</div>
+
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">7. Usos</h3>
+	  </div>
+	  <div class="panel-body">
+	    <%= form_tag import_usos_path, multipart: true do %>
+		  <div class="impobo"><%= file_field_tag :file %></div>
+		  <%= submit_tag "Importar", class: "btn btn-default" %>
+		<% end %>
+	  </div>
+	</div>
+
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">8. Telas</h3>
+	  </div>
+	  <div class="panel-body">
+	    <%= form_tag import_telas_path, multipart: true do %>
+		  <div class="impobo"><%= file_field_tag :file %></div>
+		  <%= submit_tag "Importar", class: "btn btn-default" %>
+		<% end %>
+	  </div>
+	</div>
+</div>
