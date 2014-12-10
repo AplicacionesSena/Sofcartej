@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   resources :user_sessions
   resources :users
 
+
+
   get 'login' => 'user_sessions#new', :as => :login
   get 'logout' => 'user_sessions#destroy', :as => :logout
 
@@ -54,8 +56,6 @@ Rails.application.routes.draw do
   end
 
   resources :bases_telas
-
-  resources :referencias_comerciales
 
   resources :acabados
 

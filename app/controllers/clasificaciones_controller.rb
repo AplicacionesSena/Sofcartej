@@ -52,6 +52,6 @@ class ClasificacionesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clasificacione_params
-      params.require(:clasificacione).permit(:nombre, :descripcion)
+      params.require(:clasificacione).permit(:nombre, :descripcion, :tiposTela_id)
     end
 end

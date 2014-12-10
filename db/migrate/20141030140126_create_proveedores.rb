@@ -5,6 +5,7 @@ class CreateProveedores < ActiveRecord::Migration
       t.string :telefono
       t.string :direccion
       t.string :correo
+      t.string :contacto
 
       t.timestamps
     end

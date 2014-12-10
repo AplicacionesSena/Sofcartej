@@ -1,6 +1,6 @@
 class TiposTela < ActiveRecord::Base
 	has_many :telas
-	
+	has_many :clasificaciones
 
   def self.import(file)
       accessible_attributes = ["id", "nombre"]

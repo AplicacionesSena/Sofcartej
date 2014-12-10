@@ -5,7 +5,7 @@
 </p>
 <p>
  <strong>Tipo de tela:</strong>
- <%= @tela.tiposTela.nombre %>
+ <%= @tela.basesTela.clasificacione.tiposTela.nombre %>
 </p>
 <p>
  <strong>Base:</strong>
@@ -18,22 +18,17 @@
 </p>
 
 <p>
- <strong>Referencia comercial:</strong>
- <%= @tela.referenciasComerciale.nombre %>
-</p>
-
-<p>
  <strong>Composicion:</strong>
  <%= @tela.composicion %>
 </p>
 
 <p>
- <strong>Ancho de orillo:</strong>
+ <strong>Ancho total:</strong>
  <%= @tela.anchoOrillo %>
 </p>
 
 <p>
- <strong>Uso:</strong>
+ <strong>Uso final:</strong>
  <%= @tela.uso.nombre %>
 </p>
 
@@ -43,13 +38,28 @@
 </p>
 
 <p>
+ <strong>Referencia comercial:</strong>
+ <%= @tela.tejido %>
+</p>
+
+<p>
+ <strong>Nombre comercial:</strong>
+ <%= @tela.nombrecomercial %>
+</p>
+
+<p>
  <strong>Peso:</strong>
  <%= @tela.peso %>
 </p>
 
 <p>
- <strong>Peso x unidad:</strong>
+ <strong>Unidad de peso:</strong>
  <%= @tela.pesoUnidad %>
 </p>
+<p>
+ <strong>Hilos x pulgada:</strong>
+ <%= @tela.hilosxpulgada %>
+</p>
+
 	<strong>Creado/Modificado por:</strong> <%= @tela.datos %>
 </div>

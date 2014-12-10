@@ -14,6 +14,10 @@ class CreateTelas < ActiveRecord::Migration
       t.string :pesoUnidad
       t.string :fichaTecnica
       t.string :datos
+      t.string :tejido
+      t.string :codigo
+      t.string :nombrecomercial
+      t.string :hilosxpulgada
 
       t.timestamps
     end
