@@ -24,9 +24,9 @@ class Tela < ActiveRecord::Base
   has_attached_file :document, :default_url => "/telas"
   do_not_validate_attachment_file_type :document
 	
-  def self.pagi(page)
-    order('nombre').paginate(page: page, per_page: 5)
-  end
+  #def self.pagi(page)
+  #  order('nombre').paginate(page: page, per_page: 5)
+  #end
 
   def self.ransackable_attributes(auth_object = nil)
     super - ['id', 'created_at', 'updated_at', 

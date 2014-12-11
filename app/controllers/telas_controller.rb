@@ -5,7 +5,7 @@ class TelasController < ApplicationController
   # GET /telas.json
   def index
     @search = Tela.search(params[:q])
-    @telas = @search.result && Tela.pagi(params[:page])
+    @telas = @search.result #&& Tela.pagi(params[:page])
     @search.build_condition
 
   end
