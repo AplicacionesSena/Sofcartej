@@ -6,11 +6,6 @@ class UsosController < ApplicationController
   def index
     @usos = Uso.all
   end
-
-  def import
-    Uso.import(params[:file])
-    redirect_to controller: "sofcartej", action: "importar"
-  end
   # GET /usos/1
   # GET /usos/1.json
   def show

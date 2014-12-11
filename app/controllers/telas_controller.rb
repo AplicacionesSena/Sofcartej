@@ -5,14 +5,11 @@ class TelasController < ApplicationController
   # GET /telas.json
   def index
     @search = Tela.search(params[:q])
-    @telas = @search.result
+    @telas = @search.result && Tela.pagi(params[:page])
     @search.build_condition
+
   end
 
-  def import
-    Tela.import(params[:file])
-    redirect_to controller: "sofcartej", action: "importar"
-  end
   # GET /telas/1
   # GET /telas/1.json
   def show

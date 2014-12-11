@@ -24,15 +24,15 @@ class Tela < ActiveRecord::Base
   has_attached_file :document, :default_url => "/telas"
   do_not_validate_attachment_file_type :document
 	
-
-  def self.import(file)
-      accessible_attributes = ["id", "nombre", "tiposTela_id", "basesTela_id", "proveedore_id", "referenciasComerciale_id", "composicion", "anchoOrillo", "uso_id", "acabado_id", "peso", "pesoUnidad", "datos"]
-      ::CSV.foreach(file.path, headers: true) do |row|
-        telas = find_by_id(row["id"]) || new
-        telas.attributes = row.to_hash.slice(*accessible_attributes)
-        telas.save! if telas.id != row["id"] && row["id"] != nil
-      end
+  def self.pagi(page)
+    order('nombre').paginate(page: page, per_page: 5)
   end
 
+  def self.ransackable_attributes(auth_object = nil)
+    super - ['id', 'created_at', 'updated_at', 
+      'tiposTela_id', 'basesTela_id', 'proveedore_id', 'referenciasComerciale_id',
+      'uso_id', 'acabado_id', 'fichaTecnica', 'document_file_name',
+      'document_content_type', 'document_file_size', 'document_updated_at', 'datos',]
+  end
 
 end

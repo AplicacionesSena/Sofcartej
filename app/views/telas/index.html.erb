@@ -28,11 +28,16 @@
     <% end %>
     </div>
   <% end %>
-  <%= f.submit "Buscar" %>
+  <%= f.submit "Buscar", class: "btn btn-default" %>
 <% end %>
 
 </div><br>
-
+<div class="contenipagi">
+  <div class="pagi">
+  <span class="label gran"><%= will_paginate @telas, :previous_label => '<span class="label label-success gran">← Anterior</span>'.html_safe, :next_label => '<span class="label label-success gran">Siguiente →</span>'.html_safe %></span>
+  </div>
+  <div class="conta"><span class="label label-default gran">Telas: <%= @telas.count %></span></div>
+</div>
 <br>
 <div class="con cen">
 <table class="table table-hover table-heading table-striped">
@@ -41,7 +46,7 @@
       <th class="cen">Código</th>
       <th class="cen">Nombre</th>
       <th class="cen">Tipo de tela</th>
-      <th class="cen">Clasificación</th>
+      <th class="cen">Base</th>
       <th class="cen">Composición</th>
       <th class="cen">Uso Final</th>
       <th class="cen">Acabado</th>
@@ -60,6 +65,5 @@
 </table>
 </div>
 <br>
-
 
 </center>

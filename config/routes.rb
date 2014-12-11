@@ -1,36 +1,4 @@
 Rails.application.routes.draw do
-# _-------para importar--------------_
-  resources :tipos_telas do
-    collection { post :import }
-  end
-
-  resources :acabados do
-    collection { post :import }
-  end
-
-  resources :clasificaciones do
-    collection { post :import }
-  end
-
-  resources :bases_telas do
-    collection { post :import }
-  end
-
-  resources :proveedores do
-    collection { post :import }
-  end
-
-  resources :referencias_comerciales do
-    collection { post :import }
-  end
-
-  resources :usos do
-    collection { post :import }
-  end
-
-  resources :telas do
-    collection { post :import }
-  end
 
 #_------------------------------------_
   resources :roles
@@ -69,7 +37,6 @@ Rails.application.routes.draw do
 
   get 'sofcartej/contacto'
 
-  get 'sofcartej/importar'
 
   resources :tipos_telas
 

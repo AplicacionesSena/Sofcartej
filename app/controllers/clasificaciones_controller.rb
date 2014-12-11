@@ -6,11 +6,6 @@ class ClasificacionesController < ApplicationController
   def index
     @clasificaciones = Clasificacione.all
   end
-
-  def import
-    Clasificacione.import(params[:file])
-    redirect_to controller: "sofcartej", action: "importar"
-  end
   # GET /clasificaciones/1
   # GET /clasificaciones/1.json
   def show
