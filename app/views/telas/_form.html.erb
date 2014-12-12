@@ -16,10 +16,6 @@
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <label>Tipo de tela</label><br>
-    <%= f.collection_select :tiposTela_id, TiposTela.all, :id, :nombre, class: "form-control", prompt: "Seleccione tipo de tela" %>
-  </div>
-  <div class="field">
     <label>Base</label><br>
     <%= f.collection_select :basesTela_id, BasesTela.all, :id, :nombre, class: "form-control", prompt: "Seleccione base" %>
   </div>
@@ -28,17 +24,25 @@
     <%= f.collection_select :proveedore_id, Proveedore.all, :id, :nombre, class: "form-control", prompt: "Seleccione proveedor" %>
   </div>
   <div class="field">
-    <label>Referencia Comercial</label><br>
-    <%= f.collection_select :referenciasComerciale_id, ReferenciasComerciale.all, :id, :nombre, class: "form-control", prompt: "Seleccione Referencia comercial" %>
-  </div>
-  <div class="field">
     <label>Composición</label><br>
     <%= f.text_field :composicion %>
   </div>
-</div>
+   <div class="field">
+    <label>Nombre comercial</label><br>
+    <%= f.text_field :nombrecomercial %>
+  </div>
+  <div class="field">
+    <label>Referencia comercial</label><br>
+    <%= f.text_field :tejido %>
+  </div>
+  <div class="field">
+    <label>Hilos x pulgada</label><br>
+    <%= f.text_field :hilosxpulgada %>
+  </div>
+</div> 
 <div class="form2">
   <div class="field">
-    <label>Ancho de orillo</label><br>
+    <label>Ancho total</label><br>
     <%= f.text_field :anchoOrillo %>
   </div>
   <div class="field">
@@ -54,9 +58,14 @@
     <%= f.text_field :peso %>
   </div>
   <div class="field">
-    <label>Peso x Unidad</label><br>
+    <label>Unidad de peso</label><br>
     <%= f.text_field :pesoUnidad %>
   </div>
+  <div class="field">
+    <label>Codigo</label><br>
+    <%= f.text_field :codigo %>
+  </div>
+
   <div class="field">
     <label>Ficha tecnica</label><br>
     <%= f.file_field :document %>

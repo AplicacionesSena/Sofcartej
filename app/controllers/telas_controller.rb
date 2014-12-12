@@ -4,13 +4,12 @@ class TelasController < ApplicationController
   # GET /telas
   # GET /telas.json
   def index
-    @telas = Tela.search(params[:search], params[:page])
+    @search = Tela.search(params[:q])
+    @telas = @search.result #&& Tela.pagi(params[:page])
+    @search.build_condition
+
   end
 
-  def import
-    Tela.import(params[:file])
-    redirect_to controller: "sofcartej", action: "importar"
-  end
   # GET /telas/1
   # GET /telas/1.json
   def show
@@ -69,6 +68,6 @@ class TelasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tela_params
-      params.require(:tela).permit(:nombre, :tiposTela_id, :basesTela_id, :proveedore_id, :referenciasComerciale_id, :composicion, :anchoOrillo, :uso_id, :acabado_id, :peso, :pesoUnidad, :fichaTecnica, :document, :datos)
+      params.require(:tela).permit(:nombre, :tiposTela_id, :basesTela_id, :proveedore_id, :composicion, :anchoOrillo, :uso_id, :acabado_id, :peso, :pesoUnidad, :fichaTecnica, :document, :datos, :tejido, :codigo, :nombrecomercial, :hilosxpulgada)
     end
 end

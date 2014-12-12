@@ -25,6 +25,7 @@
        <div id="jcl-demo">
           <div class="custom-container auto">
               <div class="carousel">
+              <%#=link_to image_tag(image.imagen.url, height: '250', width: '250'), tela_image_path(@tela,image), remote: true %>
                   <ul>
                       <li><%= image_tag ("1.JPG"), class: "img-rounded" %></li>
                       <li><%= image_tag ("2.JPG"), class: "img-rounded" %></li>
@@ -130,31 +131,25 @@
           </a>
         </li>
         <li class="ver">
-          <a href="/referencias_comerciales" class=" ajax-link">
-            <i class="fa fa-globe"></i>
-            <span class="hidden-xs">Referencias comerciales</span>
-          </a>
-        </li>
-        <li class="nar">
           <a href="/proveedores" class=" ajax-link">
             <i class="fa fa-group"></i>
             <span class="hidden-xs">Proveedores</span>
           </a>
         </li>
   
-        <li class="ver">
+        <li class="nar">
           <a href="/users" class=" ajax-link">
             <i class="fa fa-male"></i>
             <span class="hidden-xs">Usuarios</span>
           </a>
         </li>
-        <li class="nar">
+        <li class="ver">
           <a href="/tipos_telas" class=" ajax-link">
             <i class="fa fa-gear"></i>
             <span class="hidden-xs">Tipos de telas</span>
           </a>
         </li>
-        <li role="presentation" class="dropdown ver" >
+        <li role="presentation" class="dropdown nar" >
           <a id="drop6" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-star"></i>
             Extras
@@ -163,17 +158,6 @@
           <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
             <li><a role="menuitem" tabindex="-1" href="/articulos"><i class="fa fa-pencil"></i> Articulos</a></li>
             <li><a role="menuitem" tabindex="-1" href="/videos"><i class="fa fa-video-camera"></i> Videos</a></li>
-          </ul>
-        </li>
-        <li role="presentation" class="dropdown nar" >
-          <a id="drop6" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-exclamation-circle"></i>
-            Opciones 
-            <span class="caret"></span>
-          </a>
-          <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
-            <li><a role="menuitem" tabindex="-1" href="/sofcartej/importar"><i class="fa fa-share"></i> Realizar carga de datos</a></li>
-            <li><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-eraser"></i> Borrar todos los datos</a></li>
           </ul>
         </li>
   <% else %>

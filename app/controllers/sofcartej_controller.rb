@@ -18,8 +18,4 @@ before_filter :require_login, :except => [:inicio]
     
   end
 
-  def importar
-    
-  end
-
 end

@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <label>Tipo de tela</label><br>
+    <%= f.collection_select :tiposTela_id, TiposTela.all, :id, :nombre, class: "form-control", prompt: "Seleccione tipo de tela" %>
+  </div>
+  <div class="field">
     <%= f.label :nombre %><br>
     <%= f.text_field :nombre %>
   </div>
