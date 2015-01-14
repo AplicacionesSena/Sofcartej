@@ -1,6 +1,19 @@
+<%= render 'layouts/messages' %>
 <% if current_user.role_id == 1 %>
-<center><h1>Usos</h1><br>
-
+<center><h1>Usos finales</h1><br>
+<div class="convi2">
+  <%= form_tag usos_path, :method => 'get' do %>
+    <% content_tag :label do %>
+      Buscar por nombre:
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil %>
+    <% end %>
+  <% end %>
+<div class="conpa">
+  <span class="label gran"><%= will_paginate @usos, :previous_label => '<span class="label label-success gran">← Anterior</span>'.html_safe, :next_label => '<span class="label label-success gran">Siguiente →</span>'.html_safe %></span>
+</div>
+  <div class="conta2"><span class="label label-default gran">Usos: <%= @usos.count %></span></div>
+</div>
 <div class="peque">
 <table class="table table-hover table-heading">
   <thead>
@@ -11,7 +24,6 @@
       <% end %>
     </tr>
   </thead>
-
   <tbody>
     <%= render @usos %>
   </tbody>

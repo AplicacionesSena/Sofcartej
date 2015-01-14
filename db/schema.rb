@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20141201162453) do
     t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tiposTela_id"
   end
 
   create_table "images", force: true do |t|
@@ -58,14 +59,6 @@ ActiveRecord::Schema.define(version: 20141201162453) do
 
   add_index "images", ["tela_id"], name: "index_images_on_tela_id"
 
-  create_table "products", force: true do |t|
-    t.string   "name"
-    t.date     "releasedOn"
-    t.string   "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "proveedores", force: true do |t|
     t.string   "nombre"
     t.string   "telefono"
@@ -73,13 +66,7 @@ ActiveRecord::Schema.define(version: 20141201162453) do
     t.string   "correo"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "pruebas", force: true do |t|
-    t.string   "nombre"
-    t.string   "apellido"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "contacto",   limit: nil
   end
 
   create_table "referencias_comerciales", force: true do |t|
@@ -114,6 +101,10 @@ ActiveRecord::Schema.define(version: 20141201162453) do
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
     t.string   "datos",                    limit: nil
+    t.string   "tejido",                   limit: nil
+    t.string   "codigo",                   limit: nil
+    t.string   "nombrecomercial",          limit: nil
+    t.string   "hilosxpulgada",            limit: nil
   end
 
   create_table "tipos_telas", force: true do |t|

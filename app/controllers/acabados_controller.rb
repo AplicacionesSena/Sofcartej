@@ -4,7 +4,7 @@ class AcabadosController < ApplicationController
   # GET /acabados
   # GET /acabados.json
   def index
-    @acabados = Acabado.all
+    @acabados = Acabado.search(params[:search], params[:page])
   end
 
 

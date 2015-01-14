@@ -4,7 +4,7 @@ class UsosController < ApplicationController
   # GET /usos
   # GET /usos.json
   def index
-    @usos = Uso.all
+    @usos = Uso.search(params[:search], params[:page])
   end
   # GET /usos/1
   # GET /usos/1.json

@@ -25,7 +25,7 @@ class Tela < ActiveRecord::Base
   do_not_validate_attachment_file_type :document
 	
   #def self.pagi(page)
-  #  order('nombre').paginate(page: page, per_page: 5)
+  #  order('nombre').paginate(page: page, per_page: 1)
   #end
 
   def self.ransackable_attributes(auth_object = nil)

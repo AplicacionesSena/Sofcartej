@@ -21,6 +21,7 @@
               <span class="meni">←→</span>
             </a>
           </div>
+          <center>
       <div class="cim">
        <div id="jcl-demo">
           <div class="custom-container auto">
@@ -40,6 +41,7 @@
           </div>
         </div>
       </div>
+      </center>
           <script type="text/javascript">
               $(function() {
                   $(".auto .carousel").jCarouselLite({
@@ -70,7 +72,7 @@
                     <% if current_user %>
                     <span><%= current_user.nombre %></span>
                     <% else %>
-                    <span>Por favor ingresa</span>
+                    <span>Ingresa!</span>
                     <% end %>
                   </div>
                 </a>
@@ -240,20 +242,6 @@
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <script src="plugins/bootstrap/bootstrap.min.js"></script>
 <script src="js/devoops.js"></script>
-<script type="text/javascript">
- //location.reload(true);
-// window.location.reload()
 
-(function(){
-  if( window.localStorage ){
-    if( !localStorage.getItem( 'firstLoad' ) ){
-      localStorage[ 'firstLoad' ] = true;
-      window.location.reload();
-    }else
-      localStorage.removeItem( 'firstLoad' );
-  }
-})();
-
-</script>
 </body>
 </html>

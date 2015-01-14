@@ -7,7 +7,6 @@ class TelasController < ApplicationController
     @search = Tela.search(params[:q])
     @telas = @search.result #&& Tela.pagi(params[:page])
     @search.build_condition
-
   end
 
   # GET /telas/1
@@ -28,30 +27,13 @@ class TelasController < ApplicationController
   # POST /telas.json
   def create
     @tela = Tela.new(tela_params)
-    respond_to do |format|
-        if @tela.save
-          format.html { redirect_to telas_path}
-          format.json { render :show, status: :created, location: @tela }
-        else
-          format.html { render :new }
-          format.json { render json: @tela.errors, status: :unprocessable_entity }
-        end
-      end
-
+    render action: :new unless @tela.save
   end
 
   # PATCH/PUT /telas/1
   # PATCH/PUT /telas/1.json
   def update
-    respond_to do |format|
-        if @tela.update(tela_params)
-          format.html { redirect_to telas_path}
-          format.json { render :show, status: :ok, location: @tela }
-        else
-          format.html { render :edit }
-          format.json { render json: @tela.errors, status: :unprocessable_entity }
-        end
-      end
+    render action: :edit unless @tela.update_attributes(tela_params)
   end
 
   # DELETE /telas/1
