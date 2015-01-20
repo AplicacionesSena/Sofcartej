@@ -54,6 +54,7 @@ class ImagesController < ApplicationController
   # DELETE /images/1.json
   def destroy
     @image.destroy
+
   end
 
   private

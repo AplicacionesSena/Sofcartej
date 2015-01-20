@@ -1,12 +1,12 @@
 <tr>
-        <td><%= tela.codigo %></td>
-        <td><%= tela.nombre %></td>
-        <td><%= tela.basesTela.clasificacione.tiposTela.nombre %></td>
-        <td><%= tela.basesTela.nombre %></td>
-        <td><%= tela.composicion%></td>
-        <td><%= tela.uso.nombre %></td>
-        <td><%= tela.acabado.nombre %></td>
-        <td><%= tela.peso %></td>
+        <td><%= tela.codigo.capitalize %></td>
+        <td><%= tela.nombre.capitalize %></td>
+        <td><%= tela.basesTela.clasificacione.tiposTela.nombre.capitalize %></td>
+        <td><%= tela.basesTela.nombre.capitalize %></td>
+        <td><%= tela.composicion.capitalize %></td>
+        <td><%= tela.uso.nombre.capitalize %></td>
+        <td><%= tela.acabado.nombre.capitalize %></td>
+        <td><%= tela.peso.capitalize %></td>
         <td><%= link_to '<button class="btn btn-default">Ver</button>'.html_safe, tela.document.url %></td>
         <td><a href="#"> </a>
             <ul class="list-inline">

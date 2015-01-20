@@ -1,9 +1,16 @@
 <%= render 'layouts/messages' %>
 <center><h1>Características</h1>
+<div class="alert alert-dismissable alert-info">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <p>En esta página se muestran a continuación todas las diferentes telas que se encuentran registradas actualmente en la aplicación.
+  Cada tela tiene sus respectivos atributos; para encontrar facilmente una, utilizar el buscador.</p>
+</div>
 </center>
 <% if current_user.role_id == 1 %>
 <%= button_to 'Nueva tela', new_tela_path, class: "btn btn-success btn-lg", :method => "get", remote: true  %>
 <% end %>
+<span class="label label-default gran">Hay: <%= @telas.count %> telas.</span>
+
 <center>
 <div class="tbusca">
 <%#= form_tag telas_path, :method => 'get' do %>
@@ -14,7 +21,6 @@
     <%#= submit_tag "Buscar", :name => nil %>
  <%#<% end %>
 <%#<% end %>
-
 <%= search_form_for @search do |f| %>
   <%= f.condition_fields do |c| %>
   <div class="field">
