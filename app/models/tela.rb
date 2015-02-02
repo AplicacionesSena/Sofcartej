@@ -25,14 +25,16 @@ class Tela < ActiveRecord::Base
   do_not_validate_attachment_file_type :document
 	
   #def self.pagi(page)
-  #  order('nombre').paginate(page: page, per_page: 1)
+  #  order('nombre').paginate(page: page, per_page: 10)
   #end
-
-  def self.ransackable_attributes(auth_object = nil)
-    super - ['id', 'created_at', 'updated_at', 
-      'tiposTela_id', 'basesTela_id', 'proveedore_id', 'referenciasComerciale_id',
-      'uso_id', 'acabado_id', 'fichaTecnica', 'document_file_name',
-      'document_content_type', 'document_file_size', 'document_updated_at', 'datos',]
-  end
+  
+  def self.to_csv(options = {})
+	  CSV.generate(options) do |csv|
+	    csv << column_names
+	    all.each do |tela|
+	      csv << tela.attributes.values_at(*column_names)
+	    end
+	  end
+	end
 
 end

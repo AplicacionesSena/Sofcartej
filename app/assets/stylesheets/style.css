@@ -13,17 +13,18 @@
 }
 h1, .h1, h2, .h2, h3, .h3 {
   margin:0;
+ font-family: Imprint MT Shadow;
 }
 #log {
   position:relative;
-  background: #238276 url(devoops_pattern_b10.png) 0 0 repeat;
+  background: #447C74 url(devoops_pattern_b10.png) 0 0 repeat;
  
 }
 #log a {
   color: #fff;
-  font-family: 'Righteous', cursive;
+  font-family: Imprint MT Shadow;
   display: block;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 50px;
   background: url(logo.png) right 42px no-repeat;
   -webkit-transition: 0.5s;
@@ -151,7 +152,7 @@ box-shadow:         inset -3px 0px 5px -1px rgba(50, 50, 50, 0.75);
   -moz-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
   padding: 0;
-  background: #238276 url(devoops_pattern_b10.png) 0 0 repeat;
+  background: #447C74 url(devoops_pattern_b10.png) 0 0 repeat;
   box-shadow: none;
   visibility:hidden;
 }
@@ -265,7 +266,7 @@ box-shadow:         inset -3px 0px 5px -1px rgba(50, 50, 50, 0.75);
 }
 .panel-menu .dropdown-menu {
   position: absolute !important;
-  background-color: #238276;
+  background-color: #447C74;
   padding: 0;
   border: 0;
   right: 0;
@@ -1159,7 +1160,7 @@ td.beauty-hover {
   padding: 0;
 }
 #dashboard_links .nav {
-  background:#238276 url(devoops_pattern_b10.png) 0 0 repeat;
+  background:#447C74 url(devoops_pattern_b10.png) 0 0 repeat;
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
@@ -1408,7 +1409,7 @@ td.beauty-hover {
   position:fixed;
   bottom: 0px;
   left: 0px;
-  background: #238276 url(devoops_pattern_b10.png) 0 0 repeat;
+  background: #447C74 url(devoops_pattern_b10.png) 0 0 repeat;
   height: 50px;
   padding: 10px;
   border-top: 1px solid black;
@@ -1417,7 +1418,7 @@ td.beauty-hover {
   text-align: center;
 }
 .ver{
-  background: #238276 url(devoops_pattern_b10.png) 0 0 repeat;
+  background: #447C74 url(devoops_pattern_b10.png) 0 0 repeat;
 -webkit-box-shadow: inset -1px -1px 5px 0px rgba(50, 50, 50, 1);
 -moz-box-shadow:    inset -1px -1px 5px 0px rgba(50, 50, 50, 1);
 box-shadow:         inset -1px -1px 5px 0px rgba(50, 50, 50, 1);
@@ -1644,22 +1645,21 @@ box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
  
 }
 #jcl-demo .carousel {
-    border-radius: 10px;
-    /* Needed for rendering without flicker */
-    position: fixed;
-    visibility: hidden;
+  border-radius: 10px;
+  /* Needed for rendering without flicker */
+  position: fixed;
+  visibility: hidden;
 }
 
     /* Styling for image based carousel content. Only width and height are mandatory */
-    #jcl-demo .carousel>ul>li>img {
-        width: 100px;
-        height: 50px;
-        vertical-align:middle;
-
-        /* optional */
-        margin: 10px 10px 10px 0;
-        border-radius: 5px;
-    }
+#jcl-demo .carousel>ul>li>img {
+  width: 100px;
+  height: 50px;
+  vertical-align:middle;
+  /* optional */
+  margin: 10px 10px 10px 0;
+  border-radius: 5px;
+}
 .meni{
   position: relative;
   top: 12px;
@@ -1822,14 +1822,14 @@ footer .blanca:hover{
   font-size: 15px;
 }
 .impodiv{
-     border: 2px solid #fc7323;
+  border: 2px solid #fc7323;
   width: auto;
   text-align: center;
   -webkit-box-shadow: 0px 0px 13px 3px rgba(226, 146, 102, 1);
--moz-box-shadow:    0px 0px 13px 3px rgba(226, 146, 102, 1);
-box-shadow:         0px 0px 13px 3px rgba(226, 146, 102, 1);
-border-radius: 5px;
-height: 500px;
+  -moz-box-shadow:    0px 0px 13px 3px rgba(226, 146, 102, 1);
+  box-shadow:         0px 0px 13px 3px rgba(226, 146, 102, 1);
+  border-radius: 5px;
+  height: 500px;
   overflow-y:scroll;
   overflow-x:none;
   padding: 5px;

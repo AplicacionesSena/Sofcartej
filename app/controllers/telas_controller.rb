@@ -5,8 +5,13 @@ class TelasController < ApplicationController
   # GET /telas.json
   def index
     @search = Tela.search(params[:q])
-    @telas = @search.result #&& Tela.pagi(params[:page])
-    @search.build_condition
+      @telas = @search.result
+      @search.build_condition
+     #@telas2 = Tela.pagi(params[:page])
+     respond_to do |format|
+      format.html
+      format.xls # { send_data @usos.to_csv(col_sep: "\t")  }
+    end
   end
 
   # GET /telas/1
