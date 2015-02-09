@@ -25,3 +25,8 @@ en:
       cont: "contiene"
       cont_any: "contiene cualquier"
       cont_all: "contiene todos"
+    attributes:
+      tela:
+        pesoUnidad: "Unidad de peso" 
+        anchoOrillo: "Ancho"
+        nombrecomercial: "Nombre comercial"

@@ -13,14 +13,6 @@
 
 <center>
 <div class="tbusca">
-<%#= form_tag telas_path, :method => 'get' do %>
-  <%# content_tag :label do 
-    Buscar por Nombre, Composición, Peso o Código:
-    <%= collection_select(:uso,:uso_id,@usos, :id, :nombre, prompt: "Seleccione uso")%> 
-    <%#= text_field_tag :search, params[:search]%>
-    <%#= submit_tag "Buscar", :name => nil %>
- <%#<% end %>
-<%#<% end %>
 <%= search_form_for @search do |f| %>
   <%= f.condition_fields do |c| %>
   <div class="field">
@@ -39,6 +31,10 @@
 <% end %>
 
 </div><br>
+<div class="linkex">
+  <strong class="txt-success"><a><%= link_to "Descargar tabla en ", telas_path(format: "xls") %></a></strong>
+  <%= link_to image_tag("excel.png", :size => "20x20"), telas_path(format: "xls"), class: 'btn btn-default' %>
+</div>
 <br>
 <div class="con cen">
 <table class="table table-hover table-heading table-striped">
@@ -66,8 +62,5 @@
 </table>
 </div>
 <br>
-<p>
-  Download:
-  <%= link_to "Excel", telas_path(format: "xls") %>
-</p>
+
 </center>

@@ -1850,3 +1850,18 @@ footer .blanca:hover{
 .infoesa{
   margin-bottom:-8px;
 }
+.linkex{
+  z-index:9999999;
+  width:250px;
+  position:relative;
+  top:-90px;
+  right:-400px;
+}
+.linkex a{
+  text-decoration:none;
+}
+.linkex a:hover{
+  background-color:transparent;
+  color:#073A09;
+  font-size:14px;
+}

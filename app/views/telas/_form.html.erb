@@ -10,29 +10,30 @@
       </ul>
     </div>
   <% end %>
+<%#= --------------------------------------- primer lado %>
 <div class="form1">
   <div class="field">
-    <%= f.label :nombre %><br>
+    <label><b class="text-danger">*</b>Nombre</label><br>
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <label>Base</label><br>
+    <label><b class="text-danger">*</b>Base</label><br>
     <%= f.collection_select :basesTela_id, BasesTela.all, :id, :nombre, class: "form-control", prompt: "Seleccione base" %>
   </div>
   <div class="field">
-    <label>Proveedor</label><br>
+    <label><b class="text-danger">*</b>Proveedor</label><br>
     <%= f.collection_select :proveedore_id, Proveedore.all, :id, :nombre, class: "form-control", prompt: "Seleccione proveedor" %>
   </div>
   <div class="field">
-    <label>Composición</label><br>
+    <label><b class="text-danger">*</b>Composición</label><br>
     <%= f.text_field :composicion %>
   </div>
    <div class="field">
-    <label>Nombre comercial</label><br>
+    <label><b class="text-danger">*</b>Nombre comercial</label><br>
     <%= f.text_field :nombrecomercial %>
   </div>
   <div class="field">
-    <label>Referencia comercial</label><br>
+    <label><b class="text-danger">*</b>Referencia comercial</label><br>
     <%= f.text_field :tejido %>
   </div>
   <div class="field">
@@ -40,29 +41,30 @@
     <%= f.text_field :hilosxpulgada %>
   </div>
 </div> 
+<%#= --------------------------------------- segundo lado %>
 <div class="form2">
   <div class="field">
-    <label>Ancho total</label><br>
+    <label><b class="text-danger">*</b>Ancho total</label><br>
     <%= f.text_field :anchoOrillo %>
   </div>
   <div class="field">
-    <label>Uso</label><br>
+    <label><b class="text-danger">*</b>Uso</label><br>
     <%= f.collection_select :uso_id, Uso.all, :id, :nombre, class: "form-control", prompt: "Seleccione uso" %>
   </div>
   <div class="field">
-    <label>Acabado</label><br>
+    <label><b class="text-danger">*</b>Acabado</label><br>
     <%= f.collection_select :acabado_id, Acabado.all, :id, :nombre, class: "form-control", prompt: "Seleccione acabado" %>
   </div>
   <div class="field">
-    <%= f.label :peso %><br>
+    <label><b class="text-danger">*</b>Peso</label><br>
     <%= f.text_field :peso %>
   </div>
   <div class="field">
-    <label>Unidad de peso</label><br>
+    <label><b class="text-danger">*</b>Unidad de peso</label><br>
     <%= f.text_field :pesoUnidad %>
   </div>
   <div class="field">
-    <label>Codigo</label><br>
+    <label><b class="text-danger">*</b>Codigo</label><br>
     <%= f.text_field :codigo %>
   </div>
 
