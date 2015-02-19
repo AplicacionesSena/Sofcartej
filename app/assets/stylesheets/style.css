@@ -1476,7 +1476,7 @@ box-shadow:         inset 0px -1px 5px 0px rgba(50, 50, 50, 1);
 box-shadow:         0px 0px 13px 3px rgba(226, 146, 102, 1);
 border: 2px solid #fc7323;
   height: 530px;
-  overflow-y:scroll;
+  overflow-y:none;
   overflow-x:scroll; 
   padding: 0px;
   
@@ -1864,4 +1864,7 @@ footer .blanca:hover{
   background-color:transparent;
   color:#073A09;
   font-size:14px;
+}
+.teti{
+  
 }

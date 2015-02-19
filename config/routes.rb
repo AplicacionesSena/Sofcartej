@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :colores
+
 #_------------------------------------_
   resources :roles
 
@@ -21,6 +23,10 @@ Rails.application.routes.draw do
 
   resources :telas do
     resources :images
+  end
+  
+  resources :telas do
+    resources :colores
   end
 
   resources :bases_telas

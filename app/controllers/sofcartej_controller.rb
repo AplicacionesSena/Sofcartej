@@ -1,6 +1,6 @@
 class SofcartejController < ApplicationController
 before_filter :require_login, :except => [:inicio]
-
+ #Metodos para traer los datos de las tablas a las vistas estáticas deseadas.
   def inicio
   	@videos = Video.all
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201162453) do
+ActiveRecord::Schema.define(version: 20150218175150) do
 
   create_table "acabados", force: true do |t|
     t.string   "nombre"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20141201162453) do
     t.string   "arti_content_type"
     t.integer  "arti_file_size"
     t.datetime "arti_updated_at"
+    t.string   "datos",             limit: nil
   end
 
   create_table "bases_telas", force: true do |t|
@@ -45,6 +46,17 @@ ActiveRecord::Schema.define(version: 20141201162453) do
     t.datetime "updated_at"
     t.integer  "tiposTela_id"
   end
+
+  create_table "colores", force: true do |t|
+    t.string   "cantidadActual"
+    t.string   "entrada"
+    t.string   "salida"
+    t.integer  "tela_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "colores", ["tela_id"], name: "index_colores_on_tela_id"
 
   create_table "images", force: true do |t|
     t.string   "imagen"
@@ -83,7 +95,7 @@ ActiveRecord::Schema.define(version: 20141201162453) do
 
   create_table "telas", force: true do |t|
     t.string   "nombre"
-    t.integer  "tiposTela_id"
+    t.integer  "clasificacione_id"
     t.integer  "basesTela_id"
     t.integer  "proveedore_id"
     t.integer  "referenciasComerciale_id"
