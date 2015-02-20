@@ -1,8 +1,12 @@
 <tr>
-        <td><%= colore.cantidadActual %></td>
-        <td><%= colore.entrada %></td>
-        <td><%= colore.salida %></td>
-        <td><%= link_to 'Show', tela_colore_path(@tela,colore), remote: true %></td>
-        <td><%= link_to 'Edit', edit_tela_colore_path(@tela,colore), remote: true %></td>
-        <td><%= link_to 'Destroy', tela_colore_path(@tela,colore), method: :delete, data: { confirm: 'Estas segur@?' }, remote: true %></td>
+        <td><%= colore.color %></td>
+        <td><span class='label label-success'>+ <%= colore.entrada %> Mts</span></td>
+        <td><span class='label label-danger'>- <%= colore.salida %> Mts</span></td>
+        <td><%= operacion(colore.cantidadActual,colore.entrada,colore.salida) %></td>
+        <td><%= colore.datos %></td>
+        <td><%= link_to 'Editar', edit_tela_colore_path(@tela,colore), remote: true, class: "btn btn-info" %></td>
+        <td><%= link_to 'Eliminar', tela_colore_path(@tela,colore), method: :delete, data: { confirm: 'Estas segur@?' }, remote: true, class: "btn btn-danger" %></td>
       </tr>
+      
+      
+   

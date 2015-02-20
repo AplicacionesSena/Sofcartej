@@ -33,15 +33,7 @@ class ColoresController < ApplicationController
   # PATCH/PUT /colores/1
   # PATCH/PUT /colores/1.json
   def update
-    respond_to do |format|
-      if @colore.update(colore_params)
-        format.html { redirect_to tela_colores_path(@tela) }
-        format.json { render :show, status: :ok, location: @colore }
-      else
-        format.html { render :edit }
-        format.json { render json: @colore.errors, status: :unprocessable_entity }
-      end
-    end
+    render action: :edit unless @colore.update_attributes(colore_params)
   end
 
   # DELETE /colores/1
@@ -59,6 +51,6 @@ class ColoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def colore_params
-      params.require(:colore).permit(:cantidadActual, :entrada, :salida, :tela_id)
+      params.require(:colore).permit(:cantidadActual, :entrada, :salida, :tela_id, :color, :datos)
     end
 end

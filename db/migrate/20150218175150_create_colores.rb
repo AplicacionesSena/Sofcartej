@@ -5,7 +5,9 @@ class CreateColores < ActiveRecord::Migration
       t.integer :entrada
       t.integer :salida
       t.references :tela, index: true
-
+      t.string :color
+      t.string :datos
+      
       t.timestamps
     end
   end

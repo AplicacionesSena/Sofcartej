@@ -11,7 +11,10 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
   <div class="field">
     <%= f.label :cantidadActual %><br>
     <%= f.text_field :cantidadActual %>
@@ -23,6 +26,10 @@
   <div class="field">
     <%= f.label :salida %><br>
     <%= f.text_field :salida %>
+  </div>
+  <div class="field">
+    <%= f.label :datos %><br>
+    <%= f.text_field :datos, :value => Time.now.localtime("-05:00").to_s %>
   </div>
   <div class="actions">
     <%= f.submit %>

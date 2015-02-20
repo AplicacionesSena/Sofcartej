@@ -48,15 +48,13 @@ ActiveRecord::Schema.define(version: 20150218175150) do
   end
 
   create_table "colores", force: true do |t|
-    t.string   "cantidadActual"
-    t.string   "entrada"
-    t.string   "salida"
+    t.integer  "cantidadActual"
+    t.integer  "entrada"
+    t.integer  "salida"
     t.integer  "tela_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "colores", ["tela_id"], name: "index_colores_on_tela_id"
 
   create_table "images", force: true do |t|
     t.string   "imagen"
