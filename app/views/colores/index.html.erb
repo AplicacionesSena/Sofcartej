@@ -1,6 +1,7 @@
-<h1>Listing colores</h1>
-
-<table class="table">
+<center>
+<h1>Tela: <%= @tela.codigo %></h1>
+<br>
+<table class="table table-hover table-heading">
   <thead>
     <tr>
       <th>Color</th>
@@ -20,3 +21,4 @@
 <br>
 
 <%= link_to 'Nuevo color',  new_tela_colore_path(@tela), remote: true, class: "btn btn-success" %>
+</center>

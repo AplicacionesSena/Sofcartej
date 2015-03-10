@@ -48,7 +48,9 @@
       <th class="cen">Uso Final</th>
       <th class="cen">Acabado</th>
       <th class="cen">Peso</th>
+      <% if current_user.role_id == 1 %>
       <th class="cen">Colores y mas</th>
+      <% end %>
       <th class="cen">Ficha tecnica</th>
       <% if current_user.role_id == 1 %>
       <th class="cen" colspan="2">Opciones</th>

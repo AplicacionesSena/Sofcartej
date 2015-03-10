@@ -8,7 +8,9 @@
         <td><%= tela.uso.nombre.capitalize %></td>
         <td><%= tela.acabado.nombre.capitalize %></td>
         <td><%= tela.peso.capitalize %></td>
+        <% if current_user.role_id == 1 %> 
         <td><%= link_to '<button class="btn btn-default">Ir <i class="fa fa-th-list neg"></i></button>'.html_safe, tela_colores_path(tela) %></td>
+        <% end %>
         <td><%= link_to '<button class="btn btn-default">Ver</button>'.html_safe, tela.document.url %></td>
         <td><a href="#"> </a>
             <ul class="list-inline">
