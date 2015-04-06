@@ -1,9 +1,13 @@
-<center><h1>Articulos</h1></center><br>
-<div class="alert alert-dismissable alert-default">
-  <button type="button" class="close" data-dismiss="alert">×</button>
-  <p>En los siguientes articulos, se muestran las noticias mas recientes, importantes y destacadas sobre el mundo de las telas y la moda en la region y 
+<center>
+    <div class="bani">
+  <h1 class="banih">Articulos</h1>
+  <%= image_tag("banner.jpg", class: "banii") %>
+  <p class="banip">En los siguientes articulos, se muestran las noticias mas recientes, importantes y destacadas sobre el mundo de las telas y la moda en la region y 
   el centro de formación en diseño, confección y moda.</p>
 </div>
+    
+</center><br>
+
 <% if current_user %>
 	<% if current_user.role_id == 1 %>
 		<%= button_to 'Nuevo Articulo', new_articulo_path, class: "btn btn-success", :method => "get", remote: true %>

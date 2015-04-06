@@ -12,26 +12,30 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :color %><br>
+    <label>* Color</label><br>
     <%= f.text_field :color %>
   </div>
   <div class="field">
-    <%= f.label :cantidadActual %><br>
+    <label>* Cantidad actual</label><br>
     <%= f.text_field :cantidadActual %>
   </div>
   <div class="field">
-    <%= f.label :entrada %><br>
+   <label>* Entrada</label><br>
     <%= f.text_field :entrada %>
   </div>
   <div class="field">
-    <%= f.label :salida %><br>
+    <label>* Salida</label><br>
     <%= f.text_field :salida %>
   </div>
   <div class="field">
+    <label>Imagen</label><br>
+    <%= f.file_field :img %>
+  </div>
+  <div class="field ocultar">
     <%= f.label :datos %><br>
     <%= f.text_field :datos, :value => Time.now.localtime("-05:00").to_s %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar", class: "btn btn-success"%>
   </div>
 <% end %>

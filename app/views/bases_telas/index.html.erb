@@ -1,5 +1,10 @@
 <% if current_user.role_id == 1 %>
-<center><h1>Bases</h1><br>
+<center>
+  <div class="bani">
+  <h1 class="banih">Bases</h1>
+  <%= image_tag("banner.jpg", class: "banii") %>
+  <p class="banip"><br>Bases que se le pueden dar a las telas en sofcartej, con la clasificacion.</p>
+</div>
 <div class="convi2">
   <%= form_tag bases_telas_path, :method => 'get' do %>
     <% content_tag :label do %>

@@ -1,6 +1,6 @@
 class ColoresController < ApplicationController
   before_action :set_colore, only: [:show, :edit, :update, :destroy, :index, :new, :create]
-
+  skip_before_action :verify_authenticity_token
   # GET /colores
   # GET /colores.json
   def index
@@ -27,7 +27,15 @@ class ColoresController < ApplicationController
   def create
     @colore = Colore.new(colore_params)
     @colore.tela_id = @tela.id
-    render action: :new unless @colore.save
+      respond_to do |format|
+        if @colore.save
+          format.html { redirect_to tela_colores_path(@tela), notice: 'El color ha sido creado exitosamente.' }
+          format.json { render :show, status: :created, location: @colore }
+        else
+          format.html { render :new }
+          format.json { render json: @colore.errors, status: :unprocessable_entity }
+        end
+      end
   end
 
   # PATCH/PUT /colores/1
@@ -51,6 +59,6 @@ class ColoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def colore_params
-      params.require(:colore).permit(:cantidadActual, :entrada, :salida, :tela_id, :color, :datos)
+      params.require(:colore).permit(:cantidadActual, :entrada, :salida, :tela_id, :color, :datos, :img)
     end
 end

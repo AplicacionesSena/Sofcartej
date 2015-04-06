@@ -13,7 +13,7 @@
 }
 h1, .h1, h2, .h2, h3, .h3 {
   margin:0;
- font-family: Imprint MT Shadow;
+ font-family: Arial;
 }
 #log {
   position:relative;
@@ -22,7 +22,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 #log a {
   color: #fff;
-  font-family: Imprint MT Shadow;
+  font-family: Arial;
   display: block;
   font-size: 25px;
   line-height: 50px;
@@ -1868,4 +1868,35 @@ footer .blanca:hover{
 .valorc{
   position:relative;
   margin-top:-20px;
+}
+.bani{
+  width:90%;
+  height:130px;
+}
+.banih{
+  position:relative;
+  top:40px;
+  left:-250px;
+}
+.banii{
+  margin-top:-5.3%;
+  border-radius:5px;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.46);
+-moz-box-shadow:    0px 0px 30px 0px rgba(0, 0, 0, 0.46);
+box-shadow:         0px 0px 30px 0px rgba(0, 0, 0, 0.46);
+}
+.banii:hover{
+  -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 3, 0.42);
+-moz-box-shadow:    0px 0px 17px 0px rgba(0, 0, 3, 0.42);
+box-shadow:         0px 0px 17px 0px rgba(0, 0, 3, 0.42);
+
+
+}
+.conp{
+  position:relative;
+   top:-75px;
+   width:50%;
+   max-width:500px;
+   left:180px;
+  
 }

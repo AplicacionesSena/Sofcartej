@@ -1,5 +1,11 @@
 <% if current_user.role_id == 1 %>
-<center><h1>Acabados</h1><br>
+<center>
+  <div class="bani">
+  <h1 class="banih">Acabados</h1>
+  <%= image_tag("banner.jpg", class: "banii") %>
+  <p class="banip">El acabado de las telas es un proceso que se realiza para modificar su tacto, apariencia o 
+  comportamiento, ya que durante la hilatura, lavado y teñido las fibras van perdiendo sus ceras y grasas naturales.</p>
+</div>
 <div class="convi2">
   <%= form_tag acabados_path, :method => 'get' do %>
     <% content_tag :label do %>

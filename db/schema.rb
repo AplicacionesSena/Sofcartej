@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218175150) do
+ActiveRecord::Schema.define(version: 20150404183803) do
 
   create_table "acabados", force: true do |t|
     t.string   "nombre"
@@ -52,9 +52,17 @@ ActiveRecord::Schema.define(version: 20150218175150) do
     t.integer  "entrada"
     t.integer  "salida"
     t.integer  "tela_id"
+    t.string   "color"
+    t.string   "datos"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "img_file_name"
+    t.string   "img_content_type"
+    t.integer  "img_file_size"
+    t.datetime "img_updated_at"
   end
+
+  add_index "colores", ["tela_id"], name: "index_colores_on_tela_id"
 
   create_table "images", force: true do |t|
     t.string   "imagen"

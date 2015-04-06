@@ -1,9 +1,10 @@
 <%= render 'layouts/messages' %>
-<center><h1>Características</h1>
-<div class="alert alert-dismissable alert-info">
-  <button type="button" class="close" data-dismiss="alert">×</button>
-  <p>En esta página se muestran a continuación todas las diferentes telas que se encuentran registradas actualmente en la aplicación.
-  Cada tela tiene sus respectivos atributos; para encontrar facilmente una, utilizar el buscador.</p>
+<center>
+<div class="bani">
+  <h1 class="banih">Características</h1>
+  <%= image_tag("banner.jpg", class: "banii") %>
+  <div class="conp"><p>En esta página se muestran a continuación todas las diferentes telas que se encuentran registradas actualmente en la aplicación.
+  Cada tela tiene sus respectivos atributos; para encontrar facilmente una, utilizar el buscador.</p></div>
 </div>
 </center>
 <% if current_user.role_id == 1 %>
@@ -31,10 +32,13 @@
 <% end %>
 
 </div><br>
+<%#
 <div class="linkex">
-  <strong class="txt-success"><a><%= link_to "Descargar tabla en ", telas_path(format: "xls") %></a></strong>
-  <%= link_to image_tag("excel.png", :size => "20x20"), telas_path(format: "xls"), class: 'btn btn-default' %>
-</div>
+  <strong class="txt-success"><a><%= link_to "Descargar tabla en ", telas_path(format: "xls") %><%#</a></strong>
+  
+  <%#= link_to image_tag("excel.png", :size => "20x20"), telas_path(format: "xls"), class: 'btn btn-default' %>
+<%#</div>%>
+
 <br>
 <div class="con cen">
 <table class="table table-hover table-heading table-striped">
