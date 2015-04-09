@@ -1,9 +1,25 @@
 <%= render 'layouts/messages' %>
-<h1>Que es sofcartej? </h1><br>
-<p>Sofcartej es una aplicacion en donde se pueden encontrar las clasificaciones de los diferentes tipos de telas que se manejan en el
-centro de Diseño Confeccion y Moda. Tambien ofrece la oportunidad de encontrar los datos y detalles de una tela facilmente, mediante un buscador
- especializado, y contar con contenido extra como videos y articulos informaivos que se irán actualizando periódicamente para los
-  aprendices e instructores interezados.</p>
+<center>
+<div class="bani">
+  <h1 class="banih slideDown">Sofcartej</h1>
+  <%= image_tag("banner.jpg", class: "banii slideDown") %>
+  <div class="conp">
+  <p class="banip slideDown">Sofcartej es una aplicación en donde se pueden encontrar las 
+  clasificaciones de los diferentes tipos de telas que se manejan en el centro de Diseño Confección y Moda.
+ <span class='label label-info'><a href="#modal1">Ver más...</a></span></p>
+  </div>
+</div>
+
+<div id="modal1" class="modalmask">
+    <div class="modalbox movedown">
+        <a href="#close" title="Close" class="close">X</a><br>
+        <p>También ofrece la oportunidad de encontrar los datos y detalles de una 
+        tela fácilmente, mediante un buscador especializado, y contar con contenido extra como videos y artículos informativos 
+        que se irán actualizando periódicamente para los aprendices e instructores interesados.</p>
+    </div>
+</div>
+</center>
+
 <center>
 <% @videos.each do |video| %>
 	<%if  video.id == 12 %>

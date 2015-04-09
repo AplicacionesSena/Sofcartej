@@ -16,5 +16,8 @@ before_filter :require_login, :except => [:inicio]
   def contacto
     
   end
+  def pru
+  
+  end
 
 end
