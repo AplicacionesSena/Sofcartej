@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Styles>
+   <Style ss:ID="head">
+      
+      <Font ss:FontName="Calibri" ss:Size="13" ss:Bold="1" ss:Border="1"/>
+      <Borders>
+	    	<Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+				<Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+	 		</Borders>
+    </Style>
+    <Style ss:ID="body">
+      <Borders>
+	    	<Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+				<Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+	 		</Borders>
+    </Style>
+  </Styles>
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      
+      <Row>
+        <Cell ss:StyleID="head"><Data ss:Type="String">Codigo</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String">Nombre</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String">Tipo de tela</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String">Proveedor</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String">Composicion</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String">Ancho</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String">Uso final</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String">Acabado</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String">Nombre comercial</Data></Cell>
+      </Row>
+    <% @telas.each do |tela| %>
+      <Row>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= tela.codigo.capitalize %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= tela.nombre.capitalize %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= tela.basesTela.clasificacione.tiposTela.nombre.capitalize %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= tela.proveedore.nombre.capitalize %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= tela.composicion.capitalize %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= tela.anchoOrillo.capitalize %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= tela.uso.nombre.capitalize %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= tela.acabado.nombre.capitalize %></Data></Cell>
+        <Cell ss:StyleID="body"><Data ss:Type="String"><%= tela.nombrecomercial.capitalize %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

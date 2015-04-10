@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cantidadActual: MyString
+  entrada: MyString
+  salida: MyString
+  tela_id: 
+
+two:
+  cantidadActual: MyString
+  entrada: MyString
+  salida: MyString
+  tela_id: 

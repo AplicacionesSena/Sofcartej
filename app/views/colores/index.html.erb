@@ -1,0 +1,31 @@
+<center>
+<div class="bani">
+  <h1 class="banih slideDown">Tela: <%= @tela.codigo %></h1>
+  <%= image_tag("banner.jpg", class: "banii slideDown") %>
+  <p class="banip slideDown">En esta página se muestran a continuación todos los colores disponibles para la tela <b><%= @tela.codigo %></b> con 
+  los metros que hay actualmente para cada uno.</p>
+</div>
+<br>
+<table class="table table-hover table-heading">
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Imagen</th>
+      <th>Cantidad A.</th>
+      <th>Entrada</th>
+      <th>Salida</th>
+      <th>Cantidad total</th>
+      <th>Ultima actualización</th>
+      <th colspan="3">Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+     <%= render @colores %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo color',  new_tela_colore_path(@tela), remote: true, class: "btn btn-success" %>
+</center>

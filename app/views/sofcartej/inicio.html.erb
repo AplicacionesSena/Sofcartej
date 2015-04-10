@@ -1,10 +1,29 @@
 <%= render 'layouts/messages' %>
-<h1>Inicio </h1>
-<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+<center>
+<div class="bani">
+  <h1 class="banih slideDown">Sofcartej</h1>
+  <%= image_tag("banner.jpg", class: "banii slideDown") %>
+  <div class="conp">
+  <p class="banip slideDown">Sofcartej es una aplicación en donde se pueden encontrar las 
+  clasificaciones de los diferentes tipos de telas que se manejan en el centro de Diseño Confección y Moda.
+ <span class='label label-info'><a href="#modal1">Ver más...</a></span></p>
+  </div>
+</div>
+
+<div id="modal1" class="modalmask">
+    <div class="modalbox movedown">
+        <a href="#close" title="Close" class="close">X</a><br>
+        <p>También ofrece la oportunidad de encontrar los datos y detalles de una 
+        tela fácilmente, mediante un buscador especializado, y contar con contenido extra como videos y artículos informativos 
+        que se irán actualizando periódicamente para los aprendices e instructores interesados.</p>
+    </div>
+</div>
+</center>
+
 <center>
 <% @videos.each do |video| %>
-	<%if  video.id == 1 %>
-	 <%= video_tag(video.vid.url, height: '350', width: '550', autobuffer: true, autoplay: true,:loop => true) %>
+	<%if  video.id == 12 %>
+	 <%= video_tag(video.vid.url, height: '350', width: '550', autobuffer: true, autoplay: true,:loop => true, controls: true) %>
 	<% end %>
 <% end %>
 </center>

@@ -1,5 +1,11 @@
+<%= render 'layouts/messages' %>
 <% if current_user.role_id == 1 %>
-<center><h1>Lista de usuarios</h1><br>
+<center>
+  <div class="bani">
+  <h1 class="banih slideDown">Usuarios</h1>
+  <%= image_tag("banner.jpg", class: "banii slideDown") %>
+  <p class="banip slideDown"><br>Listado de usuarios registrados en sofcartej.</p>
+</div>
 <div class="convi">
 <%= form_tag users_path, :method => 'get' do %>
   <% content_tag :label do %>

@@ -4,13 +4,16 @@ class TelasController < ApplicationController
   # GET /telas
   # GET /telas.json
   def index
-    @telas = Tela.search(params[:search], params[:page])
+    @search = Tela.search(params[:q])
+      @telas = @search.result
+      @search.build_condition
+     #@telas2 = Tela.pagi(params[:page])
+     respond_to do |format|
+      format.html
+      format.xls # { send_data @usos.to_csv(col_sep: "\t")  }
+    end
   end
 
-  def import
-    Tela.import(params[:file])
-    redirect_to controller: "sofcartej", action: "importar"
-  end
   # GET /telas/1
   # GET /telas/1.json
   def show
@@ -29,30 +32,13 @@ class TelasController < ApplicationController
   # POST /telas.json
   def create
     @tela = Tela.new(tela_params)
-    respond_to do |format|
-        if @tela.save
-          format.html { redirect_to telas_path}
-          format.json { render :show, status: :created, location: @tela }
-        else
-          format.html { render :new }
-          format.json { render json: @tela.errors, status: :unprocessable_entity }
-        end
-      end
-
+    render action: :new unless @tela.save
   end
 
   # PATCH/PUT /telas/1
   # PATCH/PUT /telas/1.json
   def update
-    respond_to do |format|
-        if @tela.update(tela_params)
-          format.html { redirect_to telas_path}
-          format.json { render :show, status: :ok, location: @tela }
-        else
-          format.html { render :edit }
-          format.json { render json: @tela.errors, status: :unprocessable_entity }
-        end
-      end
+    render action: :edit unless @tela.update_attributes(tela_params)
   end
 
   # DELETE /telas/1
@@ -69,6 +55,6 @@ class TelasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tela_params
-      params.require(:tela).permit(:nombre, :tiposTela_id, :basesTela_id, :proveedore_id, :referenciasComerciale_id, :composicion, :anchoOrillo, :uso_id, :acabado_id, :peso, :pesoUnidad, :fichaTecnica, :document, :datos)
+      params.require(:tela).permit(:nombre, :clasificacione_id, :basesTela_id, :proveedore_id, :composicion, :anchoOrillo, :uso_id, :acabado_id, :peso, :pesoUnidad, :fichaTecnica, :document, :datos, :tejido, :codigo, :nombrecomercial, :hilosxpulgada)
     end
 end

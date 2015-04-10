@@ -4,13 +4,10 @@ class AcabadosController < ApplicationController
   # GET /acabados
   # GET /acabados.json
   def index
-    @acabados = Acabado.all
+    @acabados = Acabado.search(params[:search], params[:page])
   end
 
-  def import
-    Acabado.import(params[:file])
-    redirect_to controller: "sofcartej", action: "importar"
-  end
+
 
   # GET /acabados/1
   # GET /acabados/1.json

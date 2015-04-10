@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201162453) do
+ActiveRecord::Schema.define(version: 20150404183803) do
 
   create_table "acabados", force: true do |t|
     t.string   "nombre"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20141201162453) do
     t.string   "arti_content_type"
     t.integer  "arti_file_size"
     t.datetime "arti_updated_at"
+    t.string   "datos",             limit: nil
   end
 
   create_table "bases_telas", force: true do |t|
@@ -43,7 +44,25 @@ ActiveRecord::Schema.define(version: 20141201162453) do
     t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tiposTela_id"
   end
+
+  create_table "colores", force: true do |t|
+    t.integer  "cantidadActual"
+    t.integer  "entrada"
+    t.integer  "salida"
+    t.integer  "tela_id"
+    t.string   "color"
+    t.string   "datos"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "img_file_name"
+    t.string   "img_content_type"
+    t.integer  "img_file_size"
+    t.datetime "img_updated_at"
+  end
+
+  add_index "colores", ["tela_id"], name: "index_colores_on_tela_id"
 
   create_table "images", force: true do |t|
     t.string   "imagen"
@@ -58,14 +77,6 @@ ActiveRecord::Schema.define(version: 20141201162453) do
 
   add_index "images", ["tela_id"], name: "index_images_on_tela_id"
 
-  create_table "products", force: true do |t|
-    t.string   "name"
-    t.date     "releasedOn"
-    t.string   "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "proveedores", force: true do |t|
     t.string   "nombre"
     t.string   "telefono"
@@ -73,13 +84,7 @@ ActiveRecord::Schema.define(version: 20141201162453) do
     t.string   "correo"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "pruebas", force: true do |t|
-    t.string   "nombre"
-    t.string   "apellido"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "contacto",   limit: nil
   end
 
   create_table "referencias_comerciales", force: true do |t|
@@ -96,7 +101,7 @@ ActiveRecord::Schema.define(version: 20141201162453) do
 
   create_table "telas", force: true do |t|
     t.string   "nombre"
-    t.integer  "tiposTela_id"
+    t.integer  "clasificacione_id"
     t.integer  "basesTela_id"
     t.integer  "proveedore_id"
     t.integer  "referenciasComerciale_id"
@@ -114,6 +119,10 @@ ActiveRecord::Schema.define(version: 20141201162453) do
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
     t.string   "datos",                    limit: nil
+    t.string   "tejido",                   limit: nil
+    t.string   "codigo",                   limit: nil
+    t.string   "nombrecomercial",          limit: nil
+    t.string   "hilosxpulgada",            limit: nil
   end
 
   create_table "tipos_telas", force: true do |t|

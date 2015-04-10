@@ -4,12 +4,7 @@ class BasesTelasController < ApplicationController
   # GET /bases_telas
   # GET /bases_telas.json
   def index
-    @bases_telas = BasesTela.all
-  end
-
-  def import
-    BasesTela.import(params[:file])
-    redirect_to controller: "sofcartej", action: "importar"
+    @bases_telas = BasesTela.search(params[:search], params[:page])
   end
   # GET /bases_telas/1
   # GET /bases_telas/1.json

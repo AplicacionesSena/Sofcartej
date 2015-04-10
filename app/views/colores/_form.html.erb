@@ -1,0 +1,41 @@
+<%= simple_form_for [@tela,@colore], :html => { :class => 'form-horizontal', remote: true } do |f| %>
+
+  <% if @colore.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@colore.errors.count, "error") %> prohibited this colore from being saved:</h2>
+
+      <ul>
+      <% @colore.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <label>* Color</label><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <label>* Cantidad actual</label><br>
+    <%= f.text_field :cantidadActual %>
+  </div>
+  <div class="field">
+   <label>* Entrada</label><br>
+    <%= f.text_field :entrada %>
+  </div>
+  <div class="field">
+    <label>* Salida</label><br>
+    <%= f.text_field :salida %>
+  </div>
+  <div class="field">
+    <label>Imagen</label><br>
+    <%= f.file_field :img %>
+  </div>
+  <div class="field ocultar">
+    <%= f.label :datos %><br>
+    <%= f.text_field :datos, :value => Time.now.localtime("-05:00").to_s %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Guardar", class: "btn btn-success"%>
+  </div>
+<% end %>

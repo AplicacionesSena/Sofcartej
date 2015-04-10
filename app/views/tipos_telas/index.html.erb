@@ -1,6 +1,12 @@
 <% if current_user.role_id == 1 %>
-<center><h1>Tipos de telas</h1><br>
-<div class="peque">
+<center>
+  <div class="bani">
+  <h1 class="banih slideDown">Tipos de telas</h1>
+  <%= image_tag("banner.jpg", class: "banii slideDown") %>
+  <p class="banip slideDown">Los diversos tipos de telas pueden ser clasificados según varios criterios, por el tipo de material 
+  del que estén hechas, que bien pueden ser naturaleso artificiales, pudiendo dividirse también por ser de origen animal o vegetal.</p>
+</div>
+<div class="peque divpe">
 <table class="table table-hover table-heading">
   <thead>
     <tr>
@@ -17,6 +23,13 @@
 <br>
 
 <%= button_to 'Nuevo tipo de tela', new_tipos_tela_path, class: "btn btn-success btn-lg", :method => "get", remote: true  %>
+<div class="alert alert-dismissable alert-info">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <p> También pueden clasificarse por el tipo de confección en el tejido, e incluso 
+  por el estilo de confección y materiales usados en una determinada región, como sucede con telas como el casimir, el cual en la actualidad se refiere a una 
+  tela de lana muy fina, pero que tiene su origen en tejidos propios de la región de Cachemira, realizado con los pelos de la cabra “cachemira” o con lana de
+ovejas.</p>
+</div>
 </center>
 <% else %>
 <center>

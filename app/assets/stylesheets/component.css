@@ -18,11 +18,12 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 
 .grid li {
 	display: inline-block;
-	width: 200px;
+	width: 250px;
 	margin: 0;
 	padding: 20px;
 	text-align: left;
 	position: relative;
+	margin-left:50px;
 }
 
 .grid figure {
@@ -46,12 +47,18 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 	height: 100px;
 }
 
-.grid h3 {
+.grid h4 {
 	margin: 0;
 	padding: 0;
 	text-align: center;
 	overflow-x: scroll;
-	overflow-y: none; 
+	overflow-y: none;
+	height: 60px; 
+	width: 210px;
+	-webkit-box-shadow: 0px 2px 7px 0px rgba(224, 169, 82, 1);
+	-moz-box-shadow:    0px 2px 7px 0px rgba(224, 169, 82, 1);
+	box-shadow:         0px 2px 7px 0px rgba(224, 169, 82, 1);
+	border-radius: 5px;
 }
 
 .grid .artil {

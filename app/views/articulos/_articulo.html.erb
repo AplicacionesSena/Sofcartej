@@ -1,5 +1,5 @@
 <li>
-          <h3><%= articulo.titulo %></h3>
+          <h4><%= articulo.titulo %></h4>
           <figure>
 
             <div><%= image_tag('5.png')%></div>
@@ -17,5 +17,7 @@
               <%= link_to 'Eliminar', articulo, method: :delete, data: { confirm: 'Estas segur@?' }, class: "artil", remote: true %>
             <% end %>
           <% end %>
+          <div class="infoar infoesa">Creado/Modificado por: <br></div> 
+          <div class="infoar"><%= articulo.datos%></div>
           </div>
-        </li>
+</li>

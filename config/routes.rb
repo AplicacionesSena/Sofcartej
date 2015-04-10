@@ -1,42 +1,14 @@
 Rails.application.routes.draw do
-# _-------para importar--------------_
-  resources :tipos_telas do
-    collection { post :import }
-  end
 
-  resources :acabados do
-    collection { post :import }
-  end
-
-  resources :clasificaciones do
-    collection { post :import }
-  end
-
-  resources :bases_telas do
-    collection { post :import }
-  end
-
-  resources :proveedores do
-    collection { post :import }
-  end
-
-  resources :referencias_comerciales do
-    collection { post :import }
-  end
-
-  resources :usos do
-    collection { post :import }
-  end
-
-  resources :telas do
-    collection { post :import }
-  end
+  resources :colores
 
 #_------------------------------------_
   resources :roles
 
   resources :user_sessions
   resources :users
+
+
 
   get 'login' => 'user_sessions#new', :as => :login
   get 'logout' => 'user_sessions#destroy', :as => :logout
@@ -52,10 +24,12 @@ Rails.application.routes.draw do
   resources :telas do
     resources :images
   end
+  
+  resources :telas do
+    resources :colores
+  end
 
   resources :bases_telas
-
-  resources :referencias_comerciales
 
   resources :acabados
 
@@ -68,8 +42,9 @@ Rails.application.routes.draw do
   get 'sofcartej/sofcartej'
 
   get 'sofcartej/contacto'
+  
+  get 'sofcartej/pru'
 
-  get 'sofcartej/importar'
 
   resources :tipos_telas
 

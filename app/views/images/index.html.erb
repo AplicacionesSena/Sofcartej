@@ -1,4 +1,12 @@
-<h1>Imágenes</h1><br>
+<%= render 'layouts/messages' %>
+<h1></h1><br>
+<center>
+<div class="bani">
+  <h1 class="banih slideDown">Imágenes</h1>
+  <%= image_tag("banner.jpg", class: "banii slideDown") %>
+  <p class="banip slideDown"><br>En esta página se muestran a continuación todas las imágenes de la tela <b><%= @tela.codigo %></b>.</p>
+</div>
+</center>
 <div class="conim">
 
     <%= render @images %>

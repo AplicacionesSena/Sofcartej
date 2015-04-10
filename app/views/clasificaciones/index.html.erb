@@ -1,9 +1,15 @@
 <% if current_user.role_id == 1 %>
-<center><h1>Clasificaciones de telas</h1><br>
+<center>
+<div class="bani">
+  <h1 class="banih slideDown">Clasificaciones</h1>
+  <%= image_tag("banner.jpg", class: "banii slideDown") %>
+  <p class="banip slideDown"><br>Clasificaciones de la tela.</p>
+</div>
 <div class="peque">
 <table class="table table-hover table-heading">
   <thead>
     <tr>
+      <th class="cen">Tipos de tela</th>
       <th class="cen">Nombre</th>
       <th class="cen">Descripción</th>
         <th class="cen" colspan="2">Opciones</th>

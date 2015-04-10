@@ -2257,11 +2257,16 @@ function DrawFullCalendar(){
 //
 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////
+
+	
+
 $(document).ready(function () {
-	$('.show-sidebar').on('click', function (e) {
-		e.preventDefault();
-		$('div#main').toggleClass('sidebar-show');
-		setTimeout(MessagesMenuWidth, 250);
+	$(document).on('page:change', function (){
+		$('.show-sidebar').on('click', function (e) {
+			e.preventDefault();
+			$('div#main').toggleClass('sidebar-show');
+			setTimeout(MessagesMenuWidth, 250);
+		});
 	});
 	var ajax_url = location.hash.replace(/^#/, '');
 	if (ajax_url.length < 1) {
@@ -2392,5 +2397,4 @@ $(document).ready(function () {
 		OpenModalBox(header, form, button);
 	});
 });
-
 

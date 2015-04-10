@@ -6,11 +6,6 @@ class ClasificacionesController < ApplicationController
   def index
     @clasificaciones = Clasificacione.all
   end
-
-  def import
-    Clasificacione.import(params[:file])
-    redirect_to controller: "sofcartej", action: "importar"
-  end
   # GET /clasificaciones/1
   # GET /clasificaciones/1.json
   def show
@@ -52,6 +47,6 @@ class ClasificacionesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clasificacione_params
-      params.require(:clasificacione).permit(:nombre, :descripcion)
+      params.require(:clasificacione).permit(:nombre, :descripcion, :tiposTela_id)
     end
 end

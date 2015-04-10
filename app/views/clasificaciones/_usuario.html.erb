@@ -13,7 +13,7 @@
     <% @clasificaciones.each do |clasificacione| %>
       <tr>
           <td><%= clasificacione.nombre %></td>
-          <td><%= clasificacione.descripcion %></td>
+          <td><%= link_to '<button class="btn btn-default"><small> Info </small><i class="fa fa-eye"></i></button>'.html_safe, clasificacione, remote: true %></td>
       </tr>
     <% end %>
     </tbody>
